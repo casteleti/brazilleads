@@ -1,0 +1,597 @@
+Sabendo o que já planejamos para a Brazilleads (Next.js, SEO forte, campanhas Meta + Google, foco em conversão de leads e crescimento futuro), eu faria um nível de tracking que normalmente só vejo em operações de empresas maiores.
+
+O objetivo não é apenas medir conversões. É responder perguntas como:
+
+* Qual país gera o maior LTV?
+* Qual criativo gera os melhores clientes, não apenas mais leads?
+* Qual dor converte mais?
+* Qual headline vende mais?
+* Qual CTA gera reuniões?
+* Qual campanha gera contratos?
+* Quanto tempo leva do clique até o fechamento?
+* Quanto custa um cliente em cada país?
+* Quanto cada cliente gerou após 6 meses?
+
+Isso muda completamente a qualidade das decisões.
+
+---
+
+# Minha arquitetura ideal
+
+```
+Google Ads
+            \
+Meta Ads ------\
+LinkedIn Ads ---\
+
+          GTM
+             │
+             ▼
+        Data Layer
+             │
+ ┌───────────┼────────────┐
+ │           │            │
+ ▼           ▼            ▼
+GA4       Meta Pixel   Google Ads Conv.
+ │
+ ▼
+BigQuery
+ │
+ ▼
+Looker Studio
+ │
+ ▼
+CRM
+```
+
+Tudo deve passar pelo **Data Layer**.
+
+Nunca disparar eventos diretamente pelo Pixel.
+
+---
+
+# Data Layer extremamente rico
+
+Em vez de enviar apenas:
+
+```
+Lead
+```
+
+Eu enviaria:
+
+```javascript
+{
+ event: "lead_submit",
+
+ country: "canada",
+
+ city: "Toronto",
+
+ language: "pt",
+
+ industry: "Dental",
+
+ service: "Growth System",
+
+ source: "meta",
+
+ medium: "paid_social",
+
+ campaign: "BL_CA_DENTAL",
+
+ adset: "...",
+
+ ad: "...",
+
+ device: "mobile",
+
+ scroll_depth: 90,
+
+ landing_version: "v2",
+
+ time_on_page: 124,
+
+ returning_user: true
+}
+```
+
+Isso permite análises muito mais sofisticadas.
+
+---
+
+# Eventos que eu criaria
+
+## Navegação
+
+```
+page_view
+
+session_start
+
+landing_loaded
+
+first_scroll
+
+scroll_25
+
+scroll_50
+
+scroll_75
+
+scroll_100
+
+exit_intent
+
+return_visit
+```
+
+---
+
+## Engajamento
+
+```
+hero_cta
+
+sticky_cta
+
+footer_cta
+
+faq_open
+
+testimonial_expand
+
+country_change
+
+language_change
+
+pricing_expand
+
+service_expand
+```
+
+---
+
+## Conversão
+
+```
+form_started
+
+form_field_completed
+
+form_error
+
+form_submit
+
+calendar_open
+
+calendar_booked
+
+whatsapp_click
+
+email_click
+
+phone_click
+```
+
+---
+
+## CRM
+
+```
+lead_received
+
+lead_contacted
+
+meeting_completed
+
+proposal_sent
+
+proposal_opened
+
+deal_won
+
+deal_lost
+
+contract_signed
+```
+
+Tudo isso voltando para GA4.
+
+---
+
+# Remarketing inteligente
+
+Em vez de criar apenas:
+
+```
+Visitantes
+```
+
+Eu criaria audiências extremamente específicas.
+
+---
+
+Visitou hero apenas
+
+```
+<15 segundos
+```
+
+Mensagem diferente.
+
+---
+
+Visitou 90%
+
+Mas não converteu.
+
+Mensagem diferente.
+
+---
+
+Abriu FAQ.
+
+Mensagem diferente.
+
+---
+
+Clicou WhatsApp
+
+Mas não enviou mensagem.
+
+Mensagem diferente.
+
+---
+
+Abriu Calendly
+
+Não marcou.
+
+Mensagem diferente.
+
+---
+
+Voltou 3 vezes
+
+Não converteu.
+
+Mensagem diferente.
+
+---
+
+Visitou Canadá
+
+Mensagem somente Canadá.
+
+---
+
+Visitou EUA
+
+Mensagem somente EUA.
+
+---
+
+Visitou página Dentista
+
+Recebe apenas anúncios para Dentistas.
+
+---
+
+Isso aumenta MUITO o ROAS.
+
+---
+
+# Tracking do formulário
+
+Quero saber onde as pessoas abandonam.
+
+```
+Campo Nome
+
+↓
+
+Campo WhatsApp
+
+↓
+
+Campo País
+
+↓
+
+Campo Negócio
+
+↓
+
+Enviar
+```
+
+Se 40% abandonam no País...
+
+Talvez seja o dropdown.
+
+Você descobre isso.
+
+---
+
+# Scroll Tracking
+
+Hoje quase ninguém faz direito.
+
+Eu faria:
+
+```
+Hero
+
+↓
+
+Problema
+
+↓
+
+Solução
+
+↓
+
+Serviços
+
+↓
+
+Como funciona
+
+↓
+
+Provas
+
+↓
+
+FAQ
+
+↓
+
+CTA
+```
+
+Cada section gera:
+
+```
+section_view
+```
+
+Depois vejo:
+
+```
+Hero 100%
+
+Problema 92%
+
+Serviços 70%
+
+FAQ 30%
+
+CTA 18%
+```
+
+Se só 18% chegam no CTA...
+
+A LP está longa.
+
+---
+
+# Heatmaps
+
+Microsoft Clarity
+
+Grava:
+
+* scroll
+
+* rage click
+
+* dead click
+
+* mouse movement
+
+* touch
+
+* gravação completa
+
+É obrigatório.
+
+---
+
+# Session Replay
+
+Quero assistir:
+
+```
+Usuário do Canadá
+
+Android
+
+Meta Ads
+
+clicou CTA
+
+abandonou formulário
+
+```
+
+Vale ouro.
+
+---
+
+# UTM extremamente organizada
+
+Nunca usar UTMs simples.
+
+Exemplo:
+
+```
+utm_source=meta
+
+utm_medium=paid_social
+
+utm_campaign=ca_dental_growth
+
+utm_content=video_problem_v2
+
+utm_term=toronto
+
+country=canada
+
+language=pt
+
+industry=dental
+
+pain=appointments
+
+angle=authority
+
+offer=audit
+```
+
+Depois consigo responder:
+
+"Qual dor converte mais?"
+
+---
+
+# CRM
+
+Aqui mora o ouro.
+
+Não parar no Lead.
+
+Quero:
+
+```
+Lead
+
+↓
+
+Contato
+
+↓
+
+Call
+
+↓
+
+Proposta
+
+↓
+
+Contrato
+
+↓
+
+Pagamento
+
+↓
+
+LTV
+
+↓
+
+Renovação
+```
+
+Agora o Meta aprende.
+
+Google aprende.
+
+---
+
+# BigQuery
+
+GA4 → BigQuery.
+
+Nunca depender apenas do GA4.
+
+Depois conseguimos descobrir:
+
+```
+Qual país gera clientes mais rápidos?
+
+Qual criativo gera clientes maiores?
+
+Quanto tempo demora até fechar?
+
+Qual headline gera LTV maior?
+
+Qual CTA gera reuniões?
+
+Qual campanha gera retenção?
+```
+
+---
+
+# Consent Mode V2
+
+Fundamental para Europa (Portugal) e cada vez mais importante globalmente:
+
+* Google Consent Mode V2.
+* Banner de consentimento com categorias (necessários, analytics, marketing).
+* Disparo condicionado das tags.
+* Modelagem de conversões quando o usuário não concede consentimento.
+
+---
+
+# Server-Side Tracking
+
+Se o orçamento permitir, eu colocaria:
+
+```
+Meta CAPI
+
++
+
+Google Enhanced Conversions
+
++
+
+Server GTM
+```
+
+Assim você reduz perda causada por:
+
+* iOS
+* bloqueadores
+* navegadores focados em privacidade
+* limitações de cookies
+
+---
+
+# Meu "plus"
+
+Eu iria além do comportamento e criaria um **Lead Intelligence Score**.
+
+Cada ação soma pontos:
+
+| Evento             | Pontos |
+| ------------------ | -----: |
+| Scroll 90%         |    +10 |
+| Abriu FAQ          |     +5 |
+| Visitou pricing    |    +15 |
+| Voltou 2ª vez      |    +20 |
+| Clicou WhatsApp    |    +30 |
+| Iniciou formulário |    +40 |
+| Agendou reunião    |   +100 |
+
+Esse score alimenta o CRM e pode disparar automações (e-mails, WhatsApp, remarketing específico), além de priorizar contatos para o time comercial.
+
+## O que eu implementaria na Brazilleads (nível enterprise)
+
+1. Data Layer completo como fonte única de eventos.
+2. GTM Web + Server-Side GTM.
+3. GA4 + BigQuery + Looker Studio.
+4. Meta Pixel + Conversion API.
+5. Google Ads + Enhanced Conversions.
+6. Microsoft Clarity.
+7. Consent Mode V2.
+8. CRM integrado enviando o ciclo completo do lead (lead → reunião → proposta → venda → retenção).
+9. Audiências de remarketing baseadas em comportamento real, não apenas em visitas.
+10. Dashboard executivo com métricas por país, setor, campanha, criativo, palavra-chave, dispositivo e etapa do funil.
+
+Essa arquitetura não só melhora a mensuração, como também aumenta a qualidade da otimização dos algoritmos de Google e Meta e fornece uma visão muito mais precisa do retorno sobre investimento em cada mercado.

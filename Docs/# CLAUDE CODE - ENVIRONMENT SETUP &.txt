@@ -1,0 +1,620 @@
+# CLAUDE CODE - ENVIRONMENT SETUP & INFRASTRUCTURE
+
+## Project: BRAZILLEADS
+
+You have full authorization to perform all necessary setup, configuration, installation and deployment tasks required for this project.
+
+Do **NOT** stop asking for confirmation after each step.
+
+Proceed until the entire environment is fully operational.
+
+If a decision is obvious according to industry best practices, make it.
+
+Only stop if you encounter a real blocker that cannot be solved automatically.
+
+---
+
+# PROJECT
+
+Project Name
+
+Brazilleads
+
+GitHub Repository
+
+https://github.com/casteleti/brazilleads.git
+
+Repository Status
+
+The repository is completely empty.
+
+Initialize everything from scratch.
+
+---
+
+# OBJECTIVE
+
+Prepare a production-grade environment for a modern Next.js application that will later become a complete Growth Platform.
+
+Current phase:
+
+Landing Page.
+
+Future phases:
+
+* CRM
+* Dashboard
+* Authentication
+* Google Calendar
+* Calendly
+* WhatsApp
+* RD Station
+* AI
+* Blog
+* CMS
+* Automation
+* Analytics
+* Multi-language
+* Multi-country
+
+The architecture must already be prepared for future expansion.
+
+---
+
+# VPS
+
+You have permission to configure everything necessary.
+
+Coolify URL
+
+http://167.233.105.48:8000/
+
+Coolify API Token
+
+```
+braazilleads
+15|sNmvPF03yIuq77LHBWJxvXxcAnGMvZAl52aMsG0I85cffca9
+```
+
+Inside Coolify there is already one Docker project called:
+
+```
+My first project
+```
+
+Inside this project create a new application called:
+
+```
+brazilleads
+```
+
+Configure everything required for production deployment.
+
+---
+
+# GITHUB
+
+Repository
+
+https://github.com/casteleti/brazilleads.git
+
+Tasks
+
+* clone repository
+* initialize repository
+* create proper folder structure
+* configure git
+* configure .gitignore
+* configure branches if necessary
+* create initial commits
+* push everything automatically
+
+Do not wait for authorization.
+
+---
+
+# STACK
+
+Frontend
+
+* Next.js (latest stable)
+* React
+* TypeScript
+* Tailwind CSS
+* App Router
+* ESLint
+* Prettier
+* shadcn/ui
+* Radix UI
+* React Hook Form
+* Zod
+* Motion (only where appropriate)
+* next/image
+* next/font
+
+Backend (prepare structure)
+
+* NestJS-ready architecture
+* API folder prepared
+* Webhooks folder
+* Services folder
+* Integrations folder
+
+Database
+
+Prepare infrastructure for:
+
+* PostgreSQL
+* Prisma
+* Redis
+
+(No business logic yet.)
+
+---
+
+# PROJECT STRUCTURE
+
+Organize the project using enterprise architecture.
+
+Example
+
+/app
+
+/components
+
+/features
+
+/layouts
+
+/lib
+
+/hooks
+
+/providers
+
+/services
+
+/server
+
+/integrations
+
+/config
+
+/constants
+
+/types
+
+/utils
+
+/styles
+
+/public
+
+/scripts
+
+/docs
+
+/tests
+
+---
+
+# CONFIGURATION
+
+Configure
+
+TypeScript
+
+Tailwind
+
+Path aliases
+
+Absolute imports
+
+Environment variables
+
+ESLint
+
+Prettier
+
+Husky
+
+lint-staged
+
+EditorConfig
+
+VSCode settings
+
+Production build
+
+Development build
+
+---
+
+# ENVIRONMENT VARIABLES
+
+Create
+
+.env.example
+
+Prepare variables for future use.
+
+Examples
+
+NEXT_PUBLIC_SITE_URL
+
+NEXT_PUBLIC_GA_ID
+
+NEXT_PUBLIC_GTM_ID
+
+NEXT_PUBLIC_META_PIXEL
+
+NEXT_PUBLIC_CLARITY_ID
+
+DATABASE_URL
+
+REDIS_URL
+
+RESEND_API_KEY
+
+GOOGLE_CLIENT_ID
+
+GOOGLE_CLIENT_SECRET
+
+GOOGLE_CALENDAR_ID
+
+CALENDLY_API_KEY
+
+RD_STATION_TOKEN
+
+WHATSAPP_API_URL
+
+WHATSAPP_TOKEN
+
+N8N_WEBHOOK
+
+BIGQUERY_PROJECT
+
+COOLIFY_DEPLOY_HOOK
+
+Only placeholders.
+
+---
+
+# PERFORMANCE
+
+Configure everything for maximum performance.
+
+Requirements
+
+* Server Components by default
+* Lazy loading
+* Image optimization
+* Local fonts
+* Tree shaking
+* Code splitting
+* Compression
+* Cache headers
+* Static optimization
+* Dynamic rendering only when necessary
+
+Target
+
+Google Lighthouse
+
+Performance >95
+
+Accessibility >95
+
+SEO >95
+
+Best Practices >95
+
+---
+
+# SEO PREPARATION
+
+Prepare the project for
+
+Metadata API
+
+OpenGraph
+
+Twitter Cards
+
+Robots
+
+Sitemap
+
+Canonical
+
+JSON-LD
+
+Schema.org
+
+Hreflang
+
+Future multilingual support
+
+---
+
+# ANALYTICS PREPARATION
+
+Prepare integration points for
+
+Google Analytics 4
+
+Google Tag Manager
+
+Server-side GTM
+
+Meta Pixel
+
+Meta Conversion API
+
+Microsoft Clarity
+
+BigQuery
+
+Looker Studio
+
+No implementation yet.
+
+Prepare architecture.
+
+---
+
+# FORMS
+
+Prepare reusable form system
+
+React Hook Form
+
+Zod
+
+Validation
+
+Error components
+
+Loading components
+
+Success components
+
+Reusable Inputs
+
+Reusable Buttons
+
+---
+
+# UI
+
+Install
+
+shadcn/ui
+
+Configure
+
+Button
+
+Card
+
+Badge
+
+Input
+
+Textarea
+
+Accordion
+
+Dialog
+
+Sheet
+
+Tooltip
+
+Dropdown
+
+Tabs
+
+Avatar
+
+Separator
+
+Alert
+
+Toast
+
+Skeleton
+
+Command
+
+Popover
+
+Calendar
+
+Everything ready.
+
+---
+
+# DESIGN SYSTEM
+
+Create
+
+Color tokens
+
+Typography scale
+
+Spacing scale
+
+Border radius
+
+Shadow scale
+
+Animation scale
+
+Container widths
+
+Grid system
+
+Responsive tokens
+
+---
+
+# RESPONSIVENESS
+
+Configure mobile-first.
+
+Prepare breakpoints for
+
+Mobile
+
+Tablet
+
+Laptop
+
+Desktop
+
+Ultra-wide
+
+---
+
+# ACCESSIBILITY
+
+Configure
+
+WCAG AA
+
+Focus states
+
+Keyboard navigation
+
+Reduced motion
+
+Semantic HTML
+
+ARIA readiness
+
+---
+
+# TESTING
+
+Prepare
+
+Vitest
+
+Playwright
+
+Testing folder
+
+Testing utilities
+
+No tests required yet.
+
+---
+
+# DEPLOYMENT
+
+Configure Coolify deployment.
+
+Requirements
+
+Automatic deployment from GitHub
+
+Production environment
+
+Preview deployment (if available)
+
+Health check
+
+Build command
+
+Start command
+
+Restart policy
+
+Persistent storage (if needed)
+
+Environment variables support
+
+---
+
+# DOCUMENTATION
+
+Create documentation inside /docs
+
+Include
+
+Architecture.md
+
+Stack.md
+
+Folder-Structure.md
+
+Coding-Standards.md
+
+Deployment.md
+
+Environment.md
+
+Contributing.md
+
+---
+
+# README
+
+Create a professional README containing
+
+Project overview
+
+Architecture
+
+Stack
+
+Scripts
+
+Installation
+
+Development
+
+Deployment
+
+Folder structure
+
+Roadmap
+
+License
+
+---
+
+# OUTPUT
+
+At the end provide a complete report containing:
+
+## Infrastructure
+
+Everything configured.
+
+## GitHub
+
+Everything created.
+
+## Coolify
+
+Application deployed.
+
+## Dependencies
+
+Installed packages.
+
+## Configuration
+
+Everything modified.
+
+## Documentation
+
+Created files.
+
+## Remaining tasks
+
+Only tasks that truly require business decisions.
+
+If everything succeeds, the project should be ready for immediate landing page development without any additional infrastructure work.

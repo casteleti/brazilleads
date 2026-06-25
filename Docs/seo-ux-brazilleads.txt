@@ -1,0 +1,259 @@
+Para a Brazilleads, eu recomendaria construir as LPs como **máquinas de performance**, não como páginas bonitas apenas.
+
+## SEO avançado
+
+Use uma arquitetura assim:
+
+`brazilleads.com/`
+Página principal institucional/LP geral.
+
+`brazilleads.com/canada/`
+Brasileiros empreendendo no Canadá.
+
+`brazilleads.com/usa/`
+Brasileiros empreendendo nos EUA.
+
+`brazilleads.com/portugal/`
+Brasileiros empreendendo em Portugal.
+
+`brazilleads.com/australia/`
+Brasileiros empreendendo na Austrália.
+
+Cada página deve ter:
+
+```html
+<title>Marketing para Brasileiros no Canadá | Brazilleads</title>
+<meta name="description" content="Crescimento estratégico para brasileiros que empreendem no Canadá. Tráfego, SEO, CRM, automação e suporte em português.">
+<link rel="canonical" href="https://brazilleads.com/canada/">
+```
+
+E usar `hreflang` quando houver versão EN/PT:
+
+```html
+<link rel="alternate" hreflang="pt-BR" href="https://brazilleads.com/canada/">
+<link rel="alternate" hreflang="en-CA" href="https://brazilleads.com/en/canada/">
+<link rel="alternate" hreflang="x-default" href="https://brazilleads.com/">
+```
+
+Estrutura de headings:
+
+```txt
+H1: Crescimento para brasileiros que empreendem no Canadá
+H2: Os desafios de crescer em outro país
+H2: Como a Brazilleads ajuda
+H2: Serviços de crescimento
+H2: Para quem é
+H2: Como funciona
+H2: Perguntas frequentes
+```
+
+Schema recomendado:
+
+* `Organization`
+* `LocalBusiness` ou `ProfessionalService`
+* `Service`
+* `FAQPage`
+* `BreadcrumbList`
+* `Person` para fundador
+* `WebPage`
+
+Importante: criar páginas futuras por intenção:
+
+```txt
+/canada/marketing-para-brasileiros
+/canada/google-ads-para-brasileiros
+/canada/seo-local-para-brasileiros
+/canada/crm-e-automacao
+/canada/negocios-brasileiros-em-toronto
+/canada/negocios-brasileiros-em-vancouver
+```
+
+Isso permite capturar busca orgânica sem depender só de anúncio.
+
+## Performance e velocidade
+
+Stack ideal:
+
+```txt
+Next.js App Router
+Tailwind CSS
+Server Components
+Static Generation
+Edge/CDN
+Imagem em WebP/AVIF
+Fontes locais
+Sem bibliotecas pesadas
+Sem sliders
+Sem vídeo autoplay
+Sem animações complexas
+```
+
+Metas técnicas:
+
+```txt
+LCP < 1.8s
+CLS < 0.03
+INP < 150ms
+PageSpeed Mobile > 95
+JS inicial < 120kb
+Imagem hero < 150kb
+Fonte total < 80kb
+```
+
+Evite:
+
+```txt
+Framer Motion pesado
+carrossel
+vídeo na hero
+background animado
+Google Fonts remoto
+múltiplos pixels carregando cedo
+chat pesado no primeiro load
+mapas embutidos
+iframe Calendly direto na primeira dobra
+```
+
+Prefira:
+
+```txt
+animações CSS leves
+Calendly só após clique
+WhatsApp como link simples
+tracking carregado após consentimento ou idle
+imagens com next/image
+componentes estáticos
+lazy loading abaixo da dobra
+```
+
+## Responsividade avançada
+
+Mobile precisa ser o foco real.
+
+Hero mobile:
+
+```txt
+Headline com 2 a 4 linhas no máximo
+Subheadline curta
+CTA visível sem scroll excessivo
+Logo compacto
+Sem imagem grande competindo com copy
+Trust badge logo abaixo do botão
+```
+
+Tamanhos recomendados:
+
+```txt
+H1 mobile: 36–44px
+H1 desktop: 64–76px
+Body mobile: 17–18px
+Botão mobile: altura mínima 52px
+Touch target: mínimo 44px
+Padding mobile: 20–24px
+Padding desktop: 80–120px
+```
+
+Layout:
+
+```txt
+Mobile: 1 coluna
+Tablet: 1–2 colunas
+Desktop: 12-column grid
+Max-width conteúdo: 1120–1200px
+Max-width texto: 680px
+```
+
+Nunca deixar:
+
+```txt
+texto espremido
+cards com altura desigual feia
+ícones pequenos demais
+CTA pequeno
+form com muitos campos
+quebra de headline estranha
+seções altas demais
+espaços brancos gigantes no mobile
+```
+
+## UX de conversão
+
+Formulário com fricção mínima:
+
+```txt
+Nome
+WhatsApp
+País
+Tipo de negócio
+```
+
+Depois do envio:
+
+```txt
+Obrigado. Recebemos suas informações.
+O próximo passo é simples:
+1. Vamos entender seu momento.
+2. Vamos avaliar onde existe oportunidade.
+3. Você decide se faz sentido avançar.
+```
+
+Eu não colocaria Calendly aberto na página. Usaria botão:
+
+```txt
+Agendar conversa estratégica
+```
+
+Ao clicar, abre modal leve ou nova aba. Isso mantém a LP rápida.
+
+## Tracking avançado
+
+Eventos essenciais:
+
+```txt
+page_view
+section_view
+cta_click
+whatsapp_click
+form_start
+form_submit
+calendar_click
+scroll_50
+scroll_90
+faq_open
+country_select
+service_interest
+```
+
+UTMs padrão:
+
+```txt
+utm_source
+utm_medium
+utm_campaign
+utm_content
+utm_term
+country
+language
+audience
+angle
+```
+
+## Minha recomendação principal
+
+Não faça uma LP genérica demais.
+
+A home pode ser geral, mas as páginas por país precisam parecer feitas para aquela realidade.
+
+A melhor estrutura seria:
+
+```txt
+Home geral
+/canada
+/usa
+/portugal
+/australia
+```
+
+E depois expandir SEO por cidade/serviço.
+
+A Brazilleads precisa parecer rápida, leve, confiável e muito humana. O visitante deve sentir: **“não é uma agência tentando me vender anúncio; é alguém que entende a minha jornada lá fora e sabe construir crescimento comigo.”**
