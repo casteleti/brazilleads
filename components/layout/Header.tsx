@@ -3,27 +3,36 @@ import { Button } from '@/components/ui/button'
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+    <header
+      className="border-brand-border bg-brand-warm-white/97 sticky top-0 z-50 border-b backdrop-blur-sm"
+      style={{ borderTop: '3px solid #0f2244' }}
+    >
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-900 text-sm font-black text-white">
+          <div className="bg-brand-navy flex h-8 w-8 items-center justify-center rounded-md text-sm font-black text-white">
             BL
           </div>
-          <span className="font-bold text-slate-900">Brazilleads</span>
+          <span className="font-num text-brand-navy font-semibold tracking-tight">Brazilleads</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
-          <Link href="#como-funciona" className="text-sm text-slate-600 hover:text-slate-900">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Navegação principal">
+          <Link
+            href="#como-funciona"
+            className="text-brand-muted hover:text-brand-navy duration-fast text-sm transition-colors"
+          >
             Como funciona
           </Link>
-          <Link href="#investimento" className="text-sm text-slate-600 hover:text-slate-900">
+          <Link
+            href="#investimento"
+            className="text-brand-muted hover:text-brand-navy duration-fast text-sm transition-colors"
+          >
             Preços
           </Link>
         </nav>
 
         <Button
           asChild
-          className="bg-green-600 font-semibold text-white hover:bg-green-700"
+          className="bg-brand-green hover:bg-brand-navy duration-fast font-semibold text-white transition-colors"
           size="sm"
         >
           <Link href="#contato">Falar com especialista</Link>

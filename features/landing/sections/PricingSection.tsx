@@ -69,16 +69,14 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="investimento" className="section-padding bg-white">
+    <section id="investimento" className="section-standard bg-white">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold tracking-widest text-green-600 uppercase">
-            Investimento
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
-            Preço Transparente. Resultado Garantido.
+          <p className="label-eyebrow mb-3">Investimento</p>
+          <h2 className="font-display text-brand-navy mb-4 text-3xl md:text-4xl">
+            Investimento. <em className="text-brand-body italic">Não custo.</em>
           </h2>
-          <p className="mb-14 text-lg text-slate-600">
+          <p className="text-brand-muted mb-14 text-lg">
             Se você gasta $3k/mês em anúncios e reduzimos para $1.5k mas você vende 2x mais — seu
             retorno acontece em 1–2 meses.
           </p>
@@ -88,65 +86,41 @@ export function PricingSection() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-7 shadow-sm ${
+              className={`relative flex flex-col rounded-lg border p-7 shadow-sm ${
                 plan.highlighted
-                  ? 'border-blue-900 bg-blue-900 text-white shadow-xl ring-2 ring-blue-900'
-                  : 'border-slate-200 bg-white'
+                  ? 'border-brand-navy ring-brand-navy/15 bg-white shadow-xl ring-2'
+                  : 'border-brand-border bg-white'
               }`}
             >
               {plan.badge && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-green-500 px-4 py-1 text-xs font-bold text-white shadow">
+                  <Badge className="bg-brand-green font-num px-4 py-1 text-xs font-bold text-white shadow">
                     {plan.badge}
                   </Badge>
                 </div>
               )}
 
               <div className="mb-6">
-                <p
-                  className={`mb-1 text-sm font-semibold tracking-wider uppercase ${plan.highlighted ? 'text-blue-200' : 'text-slate-400'}`}
-                >
-                  {plan.name}
-                </p>
+                <p className="label-eyebrow mb-1">{plan.name}</p>
                 <div className="flex items-end gap-1">
-                  <span
-                    className={`text-4xl font-black ${plan.highlighted ? 'text-white' : 'text-slate-900'}`}
-                  >
-                    {plan.price}
-                  </span>
-                  <span
-                    className={`mb-1 text-sm ${plan.highlighted ? 'text-blue-200' : 'text-slate-500'}`}
-                  >
-                    {plan.currency}
-                  </span>
+                  <span className="font-num text-brand-navy text-4xl font-black">{plan.price}</span>
+                  <span className="font-num text-brand-muted mb-1 text-sm">{plan.currency}</span>
                 </div>
-                <p className={`text-sm ${plan.highlighted ? 'text-blue-200' : 'text-slate-500'}`}>
-                  {plan.period}
-                </p>
+                <p className="text-brand-muted text-sm">{plan.period}</p>
                 {plan.savings && (
-                  <p className="mt-2 rounded-lg bg-green-500/20 px-3 py-1.5 text-sm font-medium text-green-300">
+                  <p className="bg-brand-green-tint text-brand-green mt-2 rounded-md px-3 py-1.5 text-sm font-medium">
                     {plan.savings}
                   </p>
                 )}
               </div>
 
-              <p
-                className={`mb-6 text-sm leading-relaxed ${plan.highlighted ? 'text-blue-100' : 'text-slate-600'}`}
-              >
-                {plan.description}
-              </p>
+              <p className="text-brand-body mb-6 text-sm leading-relaxed">{plan.description}</p>
 
               <ul className="mb-8 flex-1 space-y-3">
                 {plan.items.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <CheckCircle
-                      className={`mt-0.5 h-4 w-4 shrink-0 ${plan.highlighted ? 'text-green-400' : 'text-green-600'}`}
-                    />
-                    <span
-                      className={`text-sm ${plan.highlighted ? 'text-blue-100' : 'text-slate-600'}`}
-                    >
-                      {item}
-                    </span>
+                    <CheckCircle className="text-brand-navy/40 mt-0.5 h-4 w-4 shrink-0" />
+                    <span className="text-brand-body text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -154,10 +128,10 @@ export function PricingSection() {
               <div className="mb-4">
                 <Button
                   asChild
-                  className={`w-full font-semibold ${
+                  className={`duration-fast w-full font-semibold transition-colors ${
                     plan.highlighted
-                      ? 'bg-green-500 text-white hover:bg-green-400'
-                      : 'bg-blue-900 text-white hover:bg-blue-800'
+                      ? 'bg-brand-green hover:bg-brand-navy text-white'
+                      : 'bg-brand-navy hover:bg-brand-navy-dark text-white'
                   }`}
                   size="lg"
                 >
@@ -165,16 +139,12 @@ export function PricingSection() {
                 </Button>
               </div>
 
-              <p
-                className={`text-center text-xs ${plan.highlighted ? 'text-blue-300' : 'text-slate-400'}`}
-              >
-                {plan.timeline}
-              </p>
+              <p className="font-num text-brand-faint text-center text-xs">{plan.timeline}</p>
             </div>
           ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-slate-500">
+        <p className="text-brand-muted mt-10 text-center text-sm">
           Preços em USD. Pagamento por transferência bancária, PIX (via câmbio) ou cartão
           internacional.
         </p>

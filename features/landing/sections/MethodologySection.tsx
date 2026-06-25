@@ -39,43 +39,39 @@ const steps = [
 
 export function MethodologySection() {
   return (
-    <section id="como-funciona" className="section-padding bg-slate-50">
+    <section id="como-funciona" className="section-standard bg-brand-warm-white">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold tracking-widest text-green-600 uppercase">
-            Como trabalhamos
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
+          <p className="label-eyebrow mb-3">Como trabalhamos</p>
+          <h2 className="font-display text-brand-navy mb-4 text-3xl md:text-4xl">
             Um Processo Transparente do Início ao Resultado
           </h2>
-          <p className="mb-14 text-lg text-slate-600">
+          <p className="text-brand-muted mb-14 text-lg">
             Sem caixa preta. Você sabe o que acontece em cada etapa.
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
           {steps.map((step) => (
             <div
               key={step.number}
-              className="relative rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+              className="border-brand-border relative rounded-lg border bg-white p-7 shadow-sm"
             >
-              {/* Step number */}
               <div className="mb-4 flex items-center justify-between">
-                <span className="text-5xl font-black text-blue-100">{step.number}</span>
-                <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                <span className="font-num text-brand-navy-tint text-5xl font-black">
+                  {step.number}
+                </span>
+                <span className="bg-brand-green-tint font-num text-brand-green rounded-full px-3 py-1 text-xs font-semibold">
                   {step.timeline}
                 </span>
               </div>
 
-              <p className="mb-1 text-xs font-semibold tracking-wider text-slate-400 uppercase">
-                {step.phase}
-              </p>
-              <h3 className="mb-3 text-xl font-bold text-slate-900">{step.title}</h3>
-              <p className="mb-4 leading-relaxed text-slate-600">{step.description}</p>
+              <p className="label-eyebrow mb-1">{step.phase}</p>
+              <h3 className="font-display text-brand-navy mb-3 text-xl">{step.title}</h3>
+              <p className="text-brand-body mb-4 leading-relaxed">{step.description}</p>
 
-              {/* Outcome */}
-              <div className="rounded-lg bg-blue-50 px-4 py-3">
-                <p className="text-sm font-medium text-blue-900">✓ {step.outcome}</p>
+              <div className="bg-brand-navy-tint rounded-md px-4 py-3">
+                <p className="text-brand-navy text-sm font-medium">✓ {step.outcome}</p>
               </div>
             </div>
           ))}

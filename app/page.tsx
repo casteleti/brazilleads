@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { StickyBottomCTA } from '@/components/layout/StickyBottomCTA'
 import { HeroSection } from '@/features/landing/sections/HeroSection'
 import { ProblemSection } from '@/features/landing/sections/ProblemSection'
 import { PositioningSection } from '@/features/landing/sections/PositioningSection'
@@ -31,6 +32,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <Footer />
+      <StickyBottomCTA />
     </>
   )
 }

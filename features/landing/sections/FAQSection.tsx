@@ -52,16 +52,14 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="section-standard bg-brand-navy-tint">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold tracking-widest text-green-600 uppercase">
-            Dúvidas frequentes
-          </p>
-          <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
+          <p className="label-eyebrow mb-3">Dúvidas frequentes</p>
+          <h2 className="font-display text-brand-navy mb-4 text-3xl md:text-4xl">
             Perguntas que Todo Mundo Faz
           </h2>
-          <p className="mb-12 text-lg text-slate-600">Respostas honestas, sem enrolação.</p>
+          <p className="text-brand-muted mb-12 text-lg">Respostas honestas, sem enrolação.</p>
         </div>
 
         <div className="mx-auto max-w-3xl">
@@ -70,26 +68,24 @@ export function FAQSection() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-xl border border-slate-200 bg-white px-6 shadow-sm data-[state=open]:border-blue-200"
+                className="border-brand-border data-[state=open]:border-brand-navy-tint rounded-lg border bg-white px-6 shadow-sm"
               >
-                <AccordionTrigger className="py-5 text-left text-base font-semibold text-slate-900 hover:no-underline">
+                <AccordionTrigger className="font-display text-brand-navy py-5 text-left text-base hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-base leading-relaxed text-slate-600">
+                <AccordionContent className="text-brand-body pb-5 text-base leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="mt-8 rounded-xl bg-blue-50 p-6 text-center">
-            <p className="text-slate-700">
+          <div className="bg-brand-navy-tint mt-8 rounded-lg p-6 text-center">
+            <p className="text-brand-body">
               Ainda tem dúvidas?{' '}
               <a
-                href="https://wa.me/XXXXXXXXXXX"
-                className="font-semibold text-blue-900 underline underline-offset-2 hover:text-blue-700"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contato"
+                className="text-brand-navy hover:text-brand-navy-mid font-semibold underline underline-offset-2"
               >
                 Fale no WhatsApp
               </a>{' '}
