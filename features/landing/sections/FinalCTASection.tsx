@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { track } from '@/lib/tracking'
 
 /* ═══════════════════════════════════════════════════════
    Section 09 — CTA Final
@@ -61,6 +64,10 @@ export function FinalCTASection() {
               href="https://wa.me/+1000000000"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                track.contact('Quero conversar com a Brazilleads', 'final_cta')
+                track.ctaClick('Quero conversar com a Brazilleads', 'final_cta', 'whatsapp')
+              }}
               className="inline-flex h-16 items-center justify-center gap-3 rounded-2xl px-10 text-[1rem] font-semibold text-white transition-opacity duration-150 hover:opacity-90 active:scale-[0.98] max-sm:w-full"
               style={{ background: '#218B52', boxShadow: '0 4px 24px rgba(33,139,82,0.35)' }}
             >

@@ -1,9 +1,46 @@
 'use client'
 
 import Script from 'next/script'
+import { useEffect, useRef } from 'react'
+import { track } from '@/lib/tracking'
 
 const GA_ID = 'G-DHQ8SXE0FW'
 const PIXEL_ID = '1408932024403985'
+
+/** Scroll milestones to track (percent of page height). */
+const SCROLL_MILESTONES = [25, 50, 75, 100] as const
+
+function useScrollTracking() {
+  const fired = useRef<Set<number>>(new Set())
+
+  useEffect(() => {
+    function onScroll() {
+      const scrolled =
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+
+      for (const milestone of SCROLL_MILESTONES) {
+        if (scrolled >= milestone && !fired.current.has(milestone)) {
+          fired.current.add(milestone)
+          track.scroll(milestone)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+}
+
+function TrackingInit() {
+  useScrollTracking()
+
+  useEffect(() => {
+    // ViewContent: landing page fully loaded and interactive
+    track.viewContent()
+  }, [])
+
+  return null
+}
 
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -50,6 +87,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
       </noscript>
       {/* End Meta Pixel Code */}
 
+      <TrackingInit />
       {children}
     </>
   )

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { track } from '@/lib/tracking'
 
 const navLinks = [
   { label: 'Método', href: '#como-funciona' },
@@ -67,6 +68,7 @@ export function Header() {
           {/* Desktop CTA */}
           <Link
             href="#contato"
+            onClick={() => track.ctaClick('Falar com especialista', 'navbar', '#contato')}
             className="hidden h-10 items-center gap-2 rounded-xl px-5 text-[0.875rem] font-semibold text-white transition-opacity duration-150 hover:opacity-90 active:scale-[0.98] md:inline-flex"
             style={{ background: '#218B52' }}
           >
@@ -152,7 +154,10 @@ export function Header() {
         <div className="px-4 pb-10">
           <Link
             href="#contato"
-            onClick={close}
+            onClick={() => {
+              close()
+              track.ctaClick('Falar com especialista', 'navbar_mobile', '#contato')
+            }}
             className="flex h-12 w-full items-center justify-center gap-2 rounded-xl text-[0.9375rem] font-semibold text-white"
             style={{ background: '#218B52' }}
           >

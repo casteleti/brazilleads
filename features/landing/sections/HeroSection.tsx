@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import {
   TrendingUp,
@@ -10,6 +12,7 @@ import {
   ChevronRight,
   MapPin,
 } from 'lucide-react'
+import { track } from '@/lib/tracking'
 
 const tech = [
   { icon: TrendingUp, label: 'Google Ads', bg: '#e8f0fe', color: '#4285F4' },
@@ -85,6 +88,7 @@ export function HeroSection() {
             <div className="hero-fade-4 mb-4 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#contato"
+                onClick={() => track.ctaClick('Quero ser encontrado', 'hero', '#contato')}
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-xl px-7 text-[0.9375rem] font-semibold text-white transition-opacity duration-150 hover:opacity-90 active:scale-[0.98] sm:w-auto lg:min-w-[220px]"
                 style={{ background: '#218B52' }}
               >
@@ -93,6 +97,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="#como-funciona"
+                onClick={() => track.ctaClick('Ver como funciona', 'hero', '#como-funciona')}
                 className="flex h-12 w-full items-center justify-center rounded-xl border px-6 text-[0.9375rem] font-medium transition-colors duration-150 sm:w-auto lg:min-w-[180px]"
                 style={{
                   borderColor: 'rgba(15,23,42,0.12)',

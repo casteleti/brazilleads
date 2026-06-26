@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { track } from '@/lib/tracking'
 
 export function StickyBottomCTA() {
   const [visible, setVisible] = useState(false)
@@ -56,7 +57,10 @@ export function StickyBottomCTA() {
         href="#contato"
         tabIndex={visible ? 0 : -1}
         className="bg-brand-green active:bg-brand-navy duration-fast flex h-14 w-full items-center justify-center text-[15px] font-semibold text-white shadow-lg transition-colors"
-        onClick={() => setVisible(false)}
+        onClick={() => {
+          setVisible(false)
+          track.ctaClick('Agendar conversa', 'sticky_cta_mobile', '#contato')
+        }}
       >
         Agendar conversa →
       </Link>
