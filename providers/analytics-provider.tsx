@@ -1,11 +1,26 @@
 'use client'
 
-/**
- * Analytics Provider
- * Placeholder for GA4, GTM, Meta Pixel, Clarity.
- * Wire up actual scripts here once env vars are set.
- */
+import Script from 'next/script'
+
+const GA_ID = 'G-DHQ8SXE0FW'
+
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
-  // TODO: initialize GA4, GTM, Meta Pixel, Clarity based on env vars
-  return <>{children}</>
+  return (
+    <>
+      {/* Google tag (gtag.js) */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}
+      </Script>
+      {children}
+    </>
+  )
 }
