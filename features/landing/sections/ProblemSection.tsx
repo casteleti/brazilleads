@@ -11,16 +11,16 @@ export function ProblemSection() {
     <section
       id="oportunidade"
       className="relative overflow-hidden"
-      style={{ background: '#F6F8F5' }}
+      style={{ background: '#0f2244' }}
     >
-      {/* Radial depth — quase imperceptível */}
+      {/* Radial depth — muito sutil sobre navy */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 60% 50% at 88% 8%, rgba(34,197,94,0.03) 0%, transparent 65%),' +
-            'radial-gradient(ellipse 50% 45% at 10% 92%, rgba(15,23,42,0.02) 0%, transparent 60%)',
+            'radial-gradient(ellipse 60% 50% at 88% 8%, rgba(34,197,94,0.06) 0%, transparent 65%),' +
+            'radial-gradient(ellipse 50% 45% at 10% 92%, rgba(255,255,255,0.02) 0%, transparent 60%)',
         }}
       />
 
@@ -29,28 +29,28 @@ export function ProblemSection() {
           {/* ─── LEFT — emoção ─────────────────────────── */}
           <div className="flex flex-col">
             {/* Eyebrow */}
-            <p className="reveal mb-7 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
+            <p className="reveal mb-7 text-[0.8125rem] font-medium" style={{ color: '#4ade80' }}>
               A oportunidade invisível
             </p>
 
-            {/* Headline — DM Serif 64px, lh 0.95 */}
+            {/* Headline */}
             <h2
               className="reveal font-display mb-8 tracking-tight"
               style={{
                 fontSize: 'clamp(2.75rem, 4.5vw, 4rem)',
                 lineHeight: '0.95',
-                color: '#0F2747',
+                color: '#ffffff',
                 maxWidth: '620px',
               }}
             >
               Enquanto você espera por indicação, alguém está procurando pelo{' '}
-              <em style={{ color: '#218B52', fontStyle: 'italic' }}>seu serviço.</em>
+              <em style={{ color: '#4ade80', fontStyle: 'italic' }}>seu serviço.</em>
             </h2>
 
-            {/* Supporting copy — 3 parágrafos, máx 65 palavras */}
+            {/* Supporting copy */}
             <div
               className="reveal mb-10 space-y-4 text-[1.0625rem] leading-[1.65]"
-              style={{ color: '#475569', maxWidth: '520px' }}
+              style={{ color: 'rgba(255,255,255,0.60)', maxWidth: '520px' }}
             >
               <p>
                 Brasileiros procuram todos os dias por restaurantes, clínicas, salões, advogados e
@@ -63,30 +63,36 @@ export function ProblemSection() {
               <p>Na maioria das vezes, encontram apenas quem apareceu primeiro.</p>
             </div>
 
-            {/* Highlight card */}
+            {/* Highlight card — branco sobre navy */}
             <div
-              className="reveal mb-10 rounded-3xl border bg-white p-6"
+              className="reveal mb-10 rounded-3xl p-6"
               style={{
-                borderColor: 'rgba(15,23,42,0.08)',
-                boxShadow: '0 2px 16px rgba(15,23,42,0.05)',
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.10)',
               }}
             >
               <div className="flex items-start gap-5">
-                {/* Icon placeholder */}
                 <div
                   className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-                  style={{ background: '#F6F8F5' }}
+                  style={{ background: 'rgba(255,255,255,0.08)' }}
                 >
-                  <Store className="h-6 w-6" style={{ color: '#475569' }} strokeWidth={1.5} />
+                  <Store
+                    className="h-6 w-6"
+                    style={{ color: 'rgba(255,255,255,0.50)' }}
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <div>
                   <p
                     className="font-display mb-1.5 text-[1.1875rem] leading-snug"
-                    style={{ color: '#0F2747' }}
+                    style={{ color: '#ffffff' }}
                   >
                     Seu serviço pode ser melhor.
                   </p>
-                  <p className="text-[0.9375rem] leading-[1.6]" style={{ color: '#475569' }}>
+                  <p
+                    className="text-[0.9375rem] leading-[1.6]"
+                    style={{ color: 'rgba(255,255,255,0.55)' }}
+                  >
                     Mas quem aparece primeiro costuma receber o contato.
                   </p>
                 </div>
@@ -96,16 +102,16 @@ export function ProblemSection() {
             {/* Closing statement */}
             <p
               className="reveal mb-10 text-[1.0625rem] leading-[1.65]"
-              style={{ color: '#0F2747' }}
+              style={{ color: 'rgba(255,255,255,0.75)' }}
             >
               A questão não é trabalhar mais. <br className="hidden lg:block" />É{' '}
-              <em className="font-semibold not-italic" style={{ color: '#218B52' }}>
+              <em className="font-semibold not-italic" style={{ color: '#4ade80' }}>
                 ser encontrado
               </em>{' '}
               no momento certo.
             </p>
 
-            {/* CTA — primário apenas */}
+            {/* CTA */}
             <div className="reveal">
               <Link
                 href="#contato"
@@ -128,8 +134,8 @@ export function ProblemSection() {
               className="w-full rounded-[28px] border bg-white"
               style={{
                 maxWidth: '520px',
-                borderColor: 'rgba(15,23,42,0.08)',
-                boxShadow: '0 4px 32px rgba(15,23,42,0.07)',
+                borderColor: 'rgba(255,255,255,0.12)',
+                boxShadow: '0 8px 48px rgba(0,0,0,0.35)',
               }}
             >
               {/* Search field */}
