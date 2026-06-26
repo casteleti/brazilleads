@@ -325,6 +325,36 @@
   }
 }
 
+/* Ecosystem connector line animations */
+@keyframes ecoFlowRight {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 9px 0;
+  }
+}
+@keyframes ecoFlowLeft {
+  from {
+    background-position: 9px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.eco-flow-right {
+  animation: ecoFlowRight 1.3s linear infinite;
+}
+.eco-flow-left {
+  animation: ecoFlowLeft 1.3s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .eco-flow-right,
+  .eco-flow-left {
+    animation: none;
+  }
+}
+
 /* Why section — pillar hover interactions (pure CSS, Server Component safe) */
 .why-pillar {
   position: relative;
