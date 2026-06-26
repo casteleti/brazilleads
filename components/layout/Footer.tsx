@@ -32,15 +32,9 @@ export function Footer() {
             <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/imgs/logo_brazilleads.png"
+                src="/imgs/logo_brazilleads_branco.png"
                 alt="Brazilleads"
-                style={{
-                  height: '28px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  filter: 'brightness(0) invert(1)',
-                  opacity: 0.9,
-                }}
+                style={{ height: '28px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
               />
             </div>
             <p
