@@ -6,6 +6,7 @@ import { HeroSection } from '@/features/landing/sections/HeroSection'
 import { ProblemSection } from '@/features/landing/sections/ProblemSection'
 import { PositioningSection } from '@/features/landing/sections/PositioningSection'
 import { MethodologySection } from '@/features/landing/sections/MethodologySection'
+import { WhySection } from '@/features/landing/sections/WhySection'
 import { SocialProofSection } from '@/features/landing/sections/SocialProofSection'
 import { FAQSection } from '@/features/landing/sections/FAQSection'
 import { PricingSection } from '@/features/landing/sections/PricingSection'
@@ -27,6 +28,7 @@ export default function HomePage() {
         <ProblemSection />
         <PositioningSection />
         <MethodologySection />
+        <WhySection />
         <SocialProofSection />
         <FAQSection />
         <PricingSection />

@@ -3,6 +3,7 @@ import { ArrowRight, MapPin, Search, Star, Store } from 'lucide-react'
 
 /* ═══════════════════════════════════════════════════════
    Section 02 — "A Oportunidade Invisível"
+   Fundo claro #F6F8F5 — parte do ritmo visual da página.
    Objetivo: identificação emocional. O visitante reconhece
    que está invisível para quem já o procura.
 ═══════════════════════════════════════════════════════ */
@@ -11,16 +12,16 @@ export function ProblemSection() {
     <section
       id="oportunidade"
       className="relative overflow-hidden"
-      style={{ background: '#0f2244' }}
+      style={{ background: '#F6F8F5' }}
     >
-      {/* Radial depth — muito sutil sobre navy */}
+      {/* Radiais muito sutis sobre fundo claro */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 60% 50% at 88% 8%, rgba(34,197,94,0.06) 0%, transparent 65%),' +
-            'radial-gradient(ellipse 50% 45% at 10% 92%, rgba(255,255,255,0.02) 0%, transparent 60%)',
+            'radial-gradient(ellipse 60% 50% at 88% 8%, rgba(33,139,82,0.05) 0%, transparent 65%),' +
+            'radial-gradient(ellipse 50% 45% at 10% 92%, rgba(15,23,42,0.03) 0%, transparent 60%)',
         }}
       />
 
@@ -29,7 +30,7 @@ export function ProblemSection() {
           {/* ─── LEFT — emoção ─────────────────────────── */}
           <div className="flex flex-col">
             {/* Eyebrow */}
-            <p className="reveal mb-7 text-[0.8125rem] font-medium" style={{ color: '#4ade80' }}>
+            <p className="reveal mb-7 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
               A oportunidade invisível
             </p>
 
@@ -39,18 +40,18 @@ export function ProblemSection() {
               style={{
                 fontSize: 'clamp(2.75rem, 4.5vw, 4rem)',
                 lineHeight: '0.95',
-                color: '#ffffff',
+                color: '#0F2747',
                 maxWidth: '620px',
               }}
             >
               Enquanto você espera por indicação, alguém está procurando pelo{' '}
-              <em style={{ color: '#4ade80', fontStyle: 'italic' }}>seu serviço.</em>
+              <em style={{ color: '#218B52', fontStyle: 'italic' }}>seu serviço.</em>
             </h2>
 
             {/* Supporting copy */}
             <div
               className="reveal mb-10 space-y-4 text-[1.0625rem] leading-[1.65]"
-              style={{ color: 'rgba(255,255,255,0.60)', maxWidth: '520px' }}
+              style={{ color: '#475569', maxWidth: '520px' }}
             >
               <p>
                 Brasileiros procuram todos os dias por restaurantes, clínicas, salões, advogados e
@@ -63,36 +64,30 @@ export function ProblemSection() {
               <p>Na maioria das vezes, encontram apenas quem apareceu primeiro.</p>
             </div>
 
-            {/* Highlight card — branco sobre navy */}
+            {/* Highlight card — sobre fundo claro */}
             <div
               className="reveal mb-10 rounded-3xl p-6"
               style={{
-                background: 'rgba(255,255,255,0.07)',
-                border: '1px solid rgba(255,255,255,0.10)',
+                background: '#FFFFFF',
+                border: '1px solid rgba(15,23,42,0.08)',
+                boxShadow: '0 2px 16px rgba(15,23,42,0.04)',
               }}
             >
               <div className="flex items-start gap-5">
                 <div
                   className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-                  style={{ background: 'rgba(255,255,255,0.08)' }}
+                  style={{ background: '#F6F8F5' }}
                 >
-                  <Store
-                    className="h-6 w-6"
-                    style={{ color: 'rgba(255,255,255,0.50)' }}
-                    strokeWidth={1.5}
-                  />
+                  <Store className="h-6 w-6" style={{ color: '#218B52' }} strokeWidth={1.5} />
                 </div>
                 <div>
                   <p
                     className="font-display mb-1.5 text-[1.1875rem] leading-snug"
-                    style={{ color: '#ffffff' }}
+                    style={{ color: '#0F2747' }}
                   >
                     Seu serviço pode ser melhor.
                   </p>
-                  <p
-                    className="text-[0.9375rem] leading-[1.6]"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}
-                  >
+                  <p className="text-[0.9375rem] leading-[1.6]" style={{ color: '#475569' }}>
                     Mas quem aparece primeiro costuma receber o contato.
                   </p>
                 </div>
@@ -102,10 +97,10 @@ export function ProblemSection() {
             {/* Closing statement */}
             <p
               className="reveal mb-10 text-[1.0625rem] leading-[1.65]"
-              style={{ color: 'rgba(255,255,255,0.75)' }}
+              style={{ color: '#0F2747' }}
             >
               A questão não é trabalhar mais. <br className="hidden lg:block" />É{' '}
-              <em className="font-semibold not-italic" style={{ color: '#4ade80' }}>
+              <em className="font-semibold not-italic" style={{ color: '#218B52' }}>
                 ser encontrado
               </em>{' '}
               no momento certo.
@@ -134,8 +129,8 @@ export function ProblemSection() {
               className="w-full rounded-[28px] border bg-white"
               style={{
                 maxWidth: '520px',
-                borderColor: 'rgba(255,255,255,0.12)',
-                boxShadow: '0 8px 48px rgba(0,0,0,0.35)',
+                borderColor: 'rgba(15,23,42,0.08)',
+                boxShadow: '0 8px 48px rgba(15,23,42,0.10)',
               }}
             >
               {/* Search field */}
@@ -160,7 +155,7 @@ export function ProblemSection() {
                   </span>
                 </div>
 
-                {/* Tabs placeholder */}
+                {/* Tabs */}
                 <div className="mt-4 flex items-center gap-6">
                   {['Tudo', 'Maps', 'Imagens', 'Vídeos', 'Mais'].map((tab, i) => (
                     <span
@@ -181,13 +176,12 @@ export function ProblemSection() {
 
               {/* Results */}
               <div className="space-y-0 px-6 py-5">
-                {/* ── Result 1 — aparece primeiro ── */}
+                {/* Result 1 — aparece primeiro */}
                 <div
                   className="rounded-2xl border p-5"
                   style={{ borderColor: 'rgba(15,23,42,0.07)', background: '#fff' }}
                 >
                   <div className="flex items-start gap-4">
-                    {/* Image placeholder */}
                     <div
                       className="h-16 w-16 shrink-0 rounded-xl"
                       style={{ background: '#e2e8f0' }}
@@ -234,22 +228,18 @@ export function ProblemSection() {
                   </div>
                 </div>
 
-                {/* Divider with spacing */}
+                {/* Divider */}
                 <div className="flex items-center gap-3 py-5">
                   <div className="h-px flex-1" style={{ background: 'rgba(15,23,42,0.06)' }} />
-                  <span className="text-[0.6875rem]" style={{ color: '#cbd5e1' }}>
-                    32px
-                  </span>
                   <div className="h-px flex-1" style={{ background: 'rgba(15,23,42,0.06)' }} />
                 </div>
 
-                {/* ── Result 2 — seu negócio (invisível) ── */}
+                {/* Result 2 — invisível */}
                 <div
                   className="rounded-2xl border p-5 opacity-45"
                   style={{ borderColor: 'rgba(15,23,42,0.07)', background: '#f8fafc' }}
                 >
                   <div className="flex items-start gap-4">
-                    {/* Image placeholder — cinza, apagado */}
                     <div
                       className="h-16 w-16 shrink-0 rounded-xl"
                       style={{ background: '#cbd5e1' }}

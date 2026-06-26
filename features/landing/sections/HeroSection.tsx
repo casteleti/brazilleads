@@ -23,7 +23,11 @@ const tech = [
 /* ═══════════════════════════════════════════════════════ */
 export function HeroSection() {
   return (
-    <section id="hero-section" className="bg-brand-warm-white relative overflow-hidden">
+    <section
+      id="hero-section"
+      className="relative overflow-hidden"
+      style={{ background: '#FCFBF8' }}
+    >
       <div className="container-page">
         {/* ── MAIN GRID ─────────────────────────────────── */}
         {/*

@@ -35,7 +35,7 @@ export function MethodologySection() {
     <section
       id="como-funciona"
       className="relative overflow-hidden"
-      style={{ background: '#FFFFFF' }}
+      style={{ background: '#F6F8F5' }}
     >
       {/* Radiais imperceptíveis */}
       <div
