@@ -325,6 +325,70 @@
   }
 }
 
+/* Why section — pillar hover interactions (pure CSS, Server Component safe) */
+.why-pillar {
+  position: relative;
+  padding-left: 0;
+  transition:
+    padding-left 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 250ms ease;
+}
+.why-pillar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: #218b52;
+  border-radius: 2px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.why-num {
+  color: rgba(15, 23, 42, 0.18);
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+  display: block;
+}
+.why-title {
+  transition: color 250ms ease;
+}
+.why-text {
+  transition: color 250ms ease;
+}
+@media (hover: hover) {
+  .why-pillar:hover {
+    padding-left: 20px;
+    background: rgba(33, 139, 82, 0.02);
+    border-radius: 4px;
+  }
+  .why-pillar:hover::before {
+    transform: scaleY(1);
+  }
+  .why-pillar:hover .why-num {
+    color: #218b52;
+    transform: translateY(-1px);
+  }
+  .why-pillar:hover .why-title {
+    color: #218b52;
+  }
+  .why-pillar:hover .why-text {
+    color: #334155;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .why-pillar,
+  .why-pillar::before,
+  .why-num,
+  .why-title,
+  .why-text {
+    transition: none;
+  }
+}
+
 /* FAQ accordion — grid-rows transition (no max-height needed) */
 .faq-body {
   display: grid;

@@ -1,26 +1,27 @@
 /* ═══════════════════════════════════════════════════════
-   Section 05 — Nosso Diferencial
-   Layout assimétrico: headline editorial grande à esquerda,
-   3 pilares de texto à direita (sem cards com ícones).
-   Completamente diferente da Section 02 e Section 04.
+   Section 05 — Por que a Brazilleads
+   Layout assimétrico mantido: headline editorial à esquerda,
+   3 pilares interativos à direita.
+   Narrativa: plataformas → pessoas → cultura → decisão → resultado.
+   Hover via CSS puro (.why-pillar, .why-num, .why-title, .why-text).
    Fundo #FFFFFF — ritmo visual.
 ═══════════════════════════════════════════════════════ */
 
 const pillars = [
   {
     num: '01',
-    title: 'Falamos a mesma língua',
-    text: 'Entendemos como brasileiros pesquisam, confiam e tomam decisões. Não apenas traduzimos — interpretamos.',
+    title: 'A busca começa em português',
+    text: 'Brasileiros buscam em português, confiam em quem fala como eles e escolhem quem parece familiar. Nós entendemos esses padrões antes de criar qualquer campanha.',
   },
   {
     num: '02',
-    title: 'Conhecemos sua realidade',
-    text: 'Empreender fora do Brasil exige estratégias diferentes. Nós construímos campanhas considerando o contexto onde você atua.',
+    title: 'Sabemos como eles tomam decisões',
+    text: 'Confiança, comunidade e proximidade moldam as escolhas dos brasileiros fora do Brasil. Esse comportamento é o ponto de partida — não uma variável.',
   },
   {
     num: '03',
-    title: 'Marketing com contexto',
-    text: 'Muito além de cliques. Criamos conexões entre brasileiros que procuram ajuda e brasileiros que decidiram empreender.',
+    title: 'Por isso nossas estratégias funcionam',
+    text: 'Quando você entende as pessoas, seus anúncios deixam de ser interrupções e passam a ser respostas. É assim que criamos resultados que se mantêm.',
   },
 ]
 
@@ -36,86 +37,113 @@ export function WhySection() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 55% 40% at 0% 50%, rgba(33,139,82,0.025) 0%, transparent 60%),' +
+            'radial-gradient(ellipse 55% 40% at 0% 50%, rgba(33,139,82,0.03) 0%, transparent 60%),' +
             'radial-gradient(ellipse 45% 35% at 100% 20%, rgba(15,23,42,0.015) 0%, transparent 55%)',
         }}
       />
 
       <div className="container-page relative py-[100px] max-lg:py-[72px]">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[58fr_42fr] lg:gap-20">
-          {/* ─── LEFT — headline editorial grande ──────── */}
-          <div>
-            <p className="reveal mb-8 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
-              Nosso diferencial
+        <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-[58fr_42fr] lg:gap-20">
+          {/* ─── LEFT — headline editorial + brand statement ── */}
+          <div className="lg:sticky lg:top-24">
+            <p
+              className="reveal mb-8 text-[0.8125rem] font-semibold tracking-[0.08em] uppercase"
+              style={{ color: '#218B52' }}
+            >
+              A diferença
             </p>
 
             <h2
               className="reveal font-display tracking-tight"
               style={{
-                fontSize: 'clamp(2.625rem, 5vw, 4rem)',
-                lineHeight: '1.0',
+                fontSize: 'clamp(2.5rem, 4.5vw, 3.75rem)',
+                lineHeight: '1.02',
                 color: '#0F2747',
               }}
             >
-              Conhecer a plataforma é importante.{' '}
+              Qualquer agência conhece as plataformas.{' '}
               <em style={{ color: '#218B52', fontStyle: 'italic' }}>
-                Conhecer as pessoas faz toda a diferença.
+                Poucas conhecem as pessoas que estão por trás delas.
               </em>
             </h2>
 
-            {/* Quote — separador visual */}
+            {/* Brand statement — conclusão visual da seção */}
             <div
-              className="reveal mt-10 pt-10"
-              style={{ borderTop: '1px solid rgba(15,23,42,0.07)' }}
+              className="reveal mt-12 pt-10"
+              style={{ borderTop: '1px solid rgba(15,23,42,0.08)' }}
             >
-              <blockquote
+              {/* Acento verde */}
+              <div
+                className="mb-5 h-[3px] rounded-full"
+                style={{ width: '28px', background: '#218B52' }}
+                aria-hidden
+              />
+
+              <p
                 className="font-display"
                 style={{
-                  fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
-                  lineHeight: '1.35',
-                  color: 'rgba(15,39,71,0.40)',
-                  fontStyle: 'italic',
+                  fontSize: 'clamp(1.25rem, 2.2vw, 1.5625rem)',
+                  lineHeight: '1.3',
+                  color: '#0F2747',
+                  fontStyle: 'normal',
                 }}
               >
-                &ldquo;Antes de pensar em anúncios,
+                Antes de pensar em anúncios,
                 <br />
-                pensamos nas pessoas.&rdquo;
-              </blockquote>
+                pensamos nas pessoas.
+              </p>
+
+              <p className="mt-3 text-[0.875rem] leading-[1.65]" style={{ color: '#94a3b8' }}>
+                — Princípio fundador da Brazilleads
+              </p>
             </div>
           </div>
 
-          {/* ─── RIGHT — 3 pilares de texto ─────────── */}
-          <div className="flex flex-col gap-0">
+          {/* ─── RIGHT — 3 pilares interativos ──────────── */}
+          <div className="flex flex-col">
             {pillars.map(({ num, title, text }, i) => (
               <div
                 key={num}
-                className="reveal py-8"
+                className="reveal why-pillar"
                 style={{
-                  borderTop: i === 0 ? '1px solid rgba(15,23,42,0.07)' : 'none',
-                  borderBottom: '1px solid rgba(15,23,42,0.07)',
+                  paddingTop: '32px',
+                  paddingBottom: '32px',
+                  borderTop: i === 0 ? '1px solid rgba(15,23,42,0.08)' : 'none',
+                  borderBottom: '1px solid rgba(15,23,42,0.08)',
                 }}
               >
                 <div className="flex items-start gap-5">
-                  <span
-                    className="font-num mt-0.5 shrink-0 text-[0.6875rem] font-semibold tracking-widest"
-                    style={{ color: '#218B52' }}
-                  >
+                  {/* Número */}
+                  <span className="why-num font-num mt-0.5 shrink-0 text-[0.6875rem] font-semibold tracking-widest">
                     {num}
                   </span>
+
                   <div>
                     <h3
-                      className="font-display mb-2 leading-snug"
+                      className="why-title font-display mb-2.5 leading-snug"
                       style={{ fontSize: '1.125rem', color: '#0F2747' }}
                     >
                       {title}
                     </h3>
-                    <p className="text-[0.875rem] leading-[1.7]" style={{ color: '#64748b' }}>
+                    <p
+                      className="why-text text-[0.875rem] leading-[1.75]"
+                      style={{ color: '#64748b' }}
+                    >
                       {text}
                     </p>
                   </div>
                 </div>
               </div>
             ))}
+
+            {/* Trust note */}
+            <p
+              className="reveal mt-8 text-[0.8125rem] leading-[1.6]"
+              style={{ color: 'rgba(15,23,42,0.3)' }}
+            >
+              Muito além de plataformas. É assim que construímos estratégias que conectam
+              brasileiros que empreendem no exterior a brasileiros que precisam do que você oferece.
+            </p>
           </div>
         </div>
       </div>
