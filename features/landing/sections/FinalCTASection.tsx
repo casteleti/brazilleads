@@ -24,7 +24,7 @@ export function FinalCTASection() {
         }}
       />
 
-      <div className="container-page relative py-[140px] max-lg:py-[96px]">
+      <div className="container-page relative py-[112px] max-lg:py-[80px]">
         <div className="mx-auto text-center" style={{ maxWidth: '900px' }}>
           {/* Eyebrow */}
           <p className="reveal mb-8 text-[0.8125rem] font-medium" style={{ color: '#4ade80' }}>

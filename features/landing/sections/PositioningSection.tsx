@@ -1,11 +1,8 @@
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-
 /* ═══════════════════════════════════════════════════════
    Section 03 — Quebra de Crença
-   Objetivo: trocar a crença "preciso trabalhar mais"
-   por "preciso ser encontrado". Tipografia como protagonista.
-   Sem cards, sem diagramas, sem estatísticas.
+   Tipografia como protagonista. Editorial puro.
+   Sem cards, sem diagramas, sem CTAs.
+   Fundo #FFFFFF — ritmo visual.
 ═══════════════════════════════════════════════════════ */
 export function PositioningSection() {
   return (
@@ -14,34 +11,33 @@ export function PositioningSection() {
       className="relative overflow-hidden"
       style={{ background: '#FFFFFF' }}
     >
-      {/* Radiais quase invisíveis */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 50% 40% at 50% 0%, rgba(33,139,82,0.025) 0%, transparent 55%),' +
-            'radial-gradient(ellipse 40% 30% at 50% 100%, rgba(15,23,42,0.015) 0%, transparent 50%)',
+            'radial-gradient(ellipse 50% 40% at 50% 0%, rgba(33,139,82,0.02) 0%, transparent 55%),' +
+            'radial-gradient(ellipse 40% 30% at 50% 100%, rgba(15,23,42,0.01) 0%, transparent 50%)',
         }}
       />
 
       <div
-        className="container-page relative py-[120px] max-lg:py-[80px]"
-        style={{ maxWidth: '980px' }}
+        className="container-page relative py-[100px] max-lg:py-[72px]"
+        style={{ maxWidth: '900px' }}
       >
-        {/* ── Eyebrow ──────────────────────────────────── */}
+        {/* Eyebrow */}
         <p
-          className="reveal mb-8 text-center text-[0.8125rem] font-medium"
+          className="reveal mb-10 text-center text-[0.8125rem] font-medium"
           style={{ color: '#218B52' }}
         >
           Uma nova perspectiva
         </p>
 
-        {/* ── Headline ─────────────────────────────────── */}
+        {/* Main headline — tipografia como protagonista */}
         <h2
-          className="reveal font-display mb-10 text-center tracking-tight"
+          className="reveal font-display mb-12 text-center tracking-tight"
           style={{
-            fontSize: 'clamp(2.625rem, 5vw, 3.75rem)',
+            fontSize: 'clamp(2.875rem, 6vw, 4.5rem)',
             lineHeight: '1.0',
             color: '#0F2747',
           }}
@@ -51,41 +47,32 @@ export function PositioningSection() {
           <span style={{ color: '#218B52', fontStyle: 'italic' }}>Comece a ser encontrado.</span>
         </h2>
 
-        {/* ── Copy ─────────────────────────────────────── */}
+        {/* Divider */}
         <div
-          className="reveal mx-auto mb-14 space-y-4 text-center text-[1.0625rem] leading-[1.7]"
-          style={{ color: '#475569', maxWidth: '600px' }}
-        >
-          <p>Mais esforço não significa mais clientes.</p>
-          <p>
-            Se as pessoas certas não encontram o seu negócio, todo o restante acontece com muito
-            mais dificuldade.
-          </p>
-          <p>O crescimento começa quando você deixa de ser invisível.</p>
-        </div>
+          className="reveal mx-auto mb-12"
+          style={{ width: '48px', height: '2px', background: 'rgba(33,139,82,0.3)' }}
+        />
 
-        {/* ── Quote block — centro emocional da seção ──── */}
-        <div className="reveal mx-auto mb-14" style={{ maxWidth: '760px' }}>
+        {/* Quote — centro emocional */}
+        <div className="reveal mx-auto mb-12" style={{ maxWidth: '720px' }}>
           <div
-            className="rounded-[28px] border bg-white px-10 py-10 text-center max-lg:px-7 max-lg:py-8"
+            className="rounded-[28px] px-10 py-10 text-center max-lg:px-7 max-lg:py-8"
             style={{
-              borderColor: 'rgba(15,23,42,0.08)',
-              boxShadow: '0 4px 40px rgba(15,23,42,0.05)',
+              background: '#F6F8F5',
+              border: '1px solid rgba(15,23,42,0.06)',
             }}
           >
-            {/* Aspas decorativas */}
             <div
               className="font-display mx-auto mb-4 leading-none select-none"
               style={{
-                fontSize: 'clamp(3rem, 6vw, 5rem)',
-                color: 'rgba(33,139,82,0.18)',
+                fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+                color: 'rgba(33,139,82,0.2)',
                 lineHeight: '0.6',
               }}
               aria-hidden
             >
               &ldquo;
             </div>
-
             <blockquote
               className="font-display tracking-tight"
               style={{
@@ -100,25 +87,13 @@ export function PositioningSection() {
           </div>
         </div>
 
-        {/* ── Supporting paragraph ──────────────────────── */}
+        {/* Closing copy */}
         <div
-          className="reveal mx-auto mb-12 space-y-2 text-center text-[1.0625rem] leading-[1.7]"
-          style={{ color: '#475569', maxWidth: '520px' }}
+          className="reveal mx-auto space-y-2 text-center text-[1.0625rem] leading-[1.7]"
+          style={{ color: '#475569', maxWidth: '480px' }}
         >
           <p>Os melhores negócios nem sempre são os mais escolhidos.</p>
           <p>Na maioria das vezes, são os mais fáceis de encontrar.</p>
-        </div>
-
-        {/* ── CTA ──────────────────────────────────────── */}
-        <div className="reveal flex justify-center">
-          <Link
-            href="#contato"
-            className="inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl px-8 text-[0.9375rem] font-semibold text-white transition-colors duration-150 hover:opacity-90 active:scale-[0.98] max-sm:w-full"
-            style={{ background: '#218B52' }}
-          >
-            Quero mudar isso
-            <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-          </Link>
         </div>
       </div>
     </section>

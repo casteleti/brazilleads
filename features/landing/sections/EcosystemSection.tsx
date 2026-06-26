@@ -3,9 +3,9 @@ import { ArrowRight, BarChart2, Globe, Layers, Mail, Monitor, TrendingUp } from 
 
 /* ═══════════════════════════════════════════════════════
    Section 06 — Ecossistema de Crescimento
-   Fundo #F6F8F5 — ritmo visual (alternado com branco).
    Diagrama SVG desktop: hub central + 6 satélites.
    Mobile: hub card + grid 2×3.
+   Fundo #F6F8F5 — ritmo visual.
 ═══════════════════════════════════════════════════════ */
 
 const leftModules = [
@@ -23,15 +23,6 @@ const rightModules = [
 const allModules = [...leftModules, ...rightModules]
 
 export function EcosystemSection() {
-  /*
-   * SVG layout — ViewBox 0 0 1100 420
-   * Left cards:  x=0,   w=280, h=110, gap=25 → y: 20, 155, 290; centers: 75, 210, 345
-   * Center hub:  x=410, y=20,  w=280, h=380  → center: (550, 210)
-   * Right cards: x=820, w=280, h=110, gap=25 → y: 20, 155, 290; centers: 75, 210, 345
-   *
-   * Connection lines: horizontal from card edge to hub edge at matching y.
-   * Lines drawn before cards so hub card (white fill) clips endpoints cleanly.
-   */
   const cardY = [20, 155, 290]
   const cardCY = [75, 210, 345]
 
@@ -41,7 +32,6 @@ export function EcosystemSection() {
       className="relative overflow-hidden"
       style={{ background: '#F6F8F5' }}
     >
-      {/* Radiais sutis */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -52,37 +42,37 @@ export function EcosystemSection() {
         }}
       />
 
-      <div className="container-page relative py-[120px] max-lg:py-[80px]">
-        {/* ── Header centralizado ───────────────────────── */}
-        <div className="mx-auto mb-16 text-center max-lg:mb-12" style={{ maxWidth: '760px' }}>
+      <div className="container-page relative py-[88px] max-lg:py-[64px]">
+        {/* Header */}
+        <div className="mx-auto mb-14 text-center" style={{ maxWidth: '680px' }}>
           <p className="reveal mb-5 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
             Ecossistema de crescimento
           </p>
 
           <h2
-            className="reveal font-display mb-6 tracking-tight"
+            className="reveal font-display mb-5 tracking-tight"
             style={{
-              fontSize: 'clamp(2.375rem, 4.5vw, 3.5rem)',
+              fontSize: 'clamp(2.25rem, 4vw, 3.25rem)',
               lineHeight: '1.0',
               color: '#0F2747',
             }}
           >
             Muito mais do que anúncios.{' '}
             <em style={{ color: '#218B52', fontStyle: 'italic' }}>
-              Criamos um sistema completo de aquisição de clientes.
+              Um sistema completo de aquisição.
             </em>
           </h2>
 
           <p
-            className="reveal mx-auto text-[1.0625rem] leading-[1.65]"
-            style={{ color: '#475569', maxWidth: '600px' }}
+            className="reveal text-[1.0625rem] leading-[1.65]"
+            style={{ color: '#475569', maxWidth: '560px', margin: '0 auto' }}
           >
             Cada ferramenta possui uma função. Quando trabalham juntas, criam uma operação capaz de
             atrair, acompanhar e converter novos clientes continuamente.
           </p>
         </div>
 
-        {/* ── Diagrama SVG — desktop ─────────────────────── */}
+        {/* SVG Diagram — desktop */}
         <div className="reveal mx-auto hidden lg:block" style={{ maxWidth: '1100px' }}>
           <svg
             width="100%"
@@ -112,10 +102,9 @@ export function EcosystemSection() {
               </filter>
             </defs>
 
-            {/* ── Connection lines (behind everything) ── */}
+            {/* Connection lines */}
             {cardCY.map((cy) => (
               <g key={cy}>
-                {/* Left card → hub left edge */}
                 <line
                   x1="280"
                   y1={cy}
@@ -125,7 +114,6 @@ export function EcosystemSection() {
                   strokeWidth="1.5"
                   strokeDasharray="5 4"
                 />
-                {/* Right card ← hub right edge */}
                 <line
                   x1="820"
                   y1={cy}
@@ -135,13 +123,10 @@ export function EcosystemSection() {
                   strokeWidth="1.5"
                   strokeDasharray="5 4"
                 />
-                {/* Dots at satellite connection points */}
                 <circle cx="282" cy={cy} r="3.5" fill="rgba(33,139,82,0.35)" />
                 <circle cx="818" cy={cy} r="3.5" fill="rgba(33,139,82,0.35)" />
               </g>
             ))}
-
-            {/* ── Dots at hub edges ── */}
             {cardCY.map((cy) => (
               <g key={`hub-${cy}`}>
                 <circle cx="408" cy={cy} r="3.5" fill="rgba(33,139,82,0.35)" />
@@ -149,7 +134,7 @@ export function EcosystemSection() {
               </g>
             ))}
 
-            {/* ── Left cards ── */}
+            {/* Left cards */}
             {leftModules.map(({ label, desc }, i) => (
               <g key={label} filter="url(#eco-card-shadow)">
                 <rect
@@ -162,9 +147,7 @@ export function EcosystemSection() {
                   stroke="rgba(15,23,42,0.08)"
                   strokeWidth="1"
                 />
-                {/* Icon placeholder circle */}
                 <circle cx="48" cy={cardCY[i]} r="24" fill="#F0F4F0" />
-                {/* Title */}
                 <text
                   x="84"
                   y={cardCY[i] - 8}
@@ -174,7 +157,6 @@ export function EcosystemSection() {
                 >
                   {label}
                 </text>
-                {/* Description */}
                 <text
                   x="84"
                   y={cardCY[i] + 12}
@@ -187,7 +169,7 @@ export function EcosystemSection() {
               </g>
             ))}
 
-            {/* ── Right cards ── */}
+            {/* Right cards */}
             {rightModules.map(({ label, desc }, i) => (
               <g key={label} filter="url(#eco-card-shadow)">
                 <rect
@@ -200,9 +182,7 @@ export function EcosystemSection() {
                   stroke="rgba(15,23,42,0.08)"
                   strokeWidth="1"
                 />
-                {/* Icon placeholder circle */}
                 <circle cx="868" cy={cardCY[i]} r="24" fill="#F0F4F0" />
-                {/* Title */}
                 <text
                   x="904"
                   y={cardCY[i] - 8}
@@ -212,7 +192,6 @@ export function EcosystemSection() {
                 >
                   {label}
                 </text>
-                {/* Description */}
                 <text
                   x="904"
                   y={cardCY[i] + 12}
@@ -225,7 +204,7 @@ export function EcosystemSection() {
               </g>
             ))}
 
-            {/* ── Center Hub ── */}
+            {/* Center Hub */}
             <g filter="url(#eco-hub-shadow)">
               <rect
                 x="410"
@@ -237,9 +216,7 @@ export function EcosystemSection() {
                 stroke="rgba(33,139,82,0.22)"
                 strokeWidth="1.5"
               />
-              {/* Radial glow */}
               <ellipse cx="550" cy="210" rx="100" ry="120" fill="rgba(33,139,82,0.025)" />
-              {/* Hub icon placeholder */}
               <circle cx="550" cy="135" r="44" fill="#F0F7F3" />
               <circle
                 cx="550"
@@ -249,7 +226,6 @@ export function EcosystemSection() {
                 stroke="rgba(33,139,82,0.2)"
                 strokeWidth="1.5"
               />
-              {/* Hub title */}
               <text
                 x="550"
                 y="210"
@@ -260,7 +236,6 @@ export function EcosystemSection() {
               >
                 Brazilleads
               </text>
-              {/* Hub subtitle */}
               <text
                 x="550"
                 y="236"
@@ -271,7 +246,6 @@ export function EcosystemSection() {
               >
                 Ecossistema de crescimento
               </text>
-              {/* Decorative dots */}
               <circle cx="526" cy="300" r="3" fill="rgba(33,139,82,0.22)" />
               <circle cx="550" cy="300" r="3" fill="rgba(33,139,82,0.22)" />
               <circle cx="574" cy="300" r="3" fill="rgba(33,139,82,0.22)" />
@@ -279,9 +253,8 @@ export function EcosystemSection() {
           </svg>
         </div>
 
-        {/* ── Mobile: hub + grid ─────────────────────────── */}
+        {/* Mobile: hub + grid */}
         <div className="reveal lg:hidden">
-          {/* Hub */}
           <div
             className="mx-auto mb-8 rounded-[28px] border p-8 text-center"
             style={{
@@ -302,7 +275,6 @@ export function EcosystemSection() {
               Ecossistema de crescimento
             </p>
           </div>
-          {/* Module grid */}
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {allModules.map(({ label, desc }) => (
               <div
@@ -328,21 +300,20 @@ export function EcosystemSection() {
           </div>
         </div>
 
-        {/* ── Closing + CTA ────────────────────────────────── */}
-        <div className="reveal mx-auto mt-16 text-center" style={{ maxWidth: '580px' }}>
+        {/* Closing + CTA */}
+        <div className="reveal mx-auto mt-14 text-center" style={{ maxWidth: '540px' }}>
           <p
-            className="mb-2 text-[1.0625rem] leading-[1.7]"
+            className="mb-2 text-[1rem] leading-[1.7]"
             style={{ color: '#0F2747', fontWeight: 500 }}
           >
             Nenhuma ferramenta gera resultados sozinha.
           </p>
-          <p className="mb-10 text-[1.0625rem] leading-[1.7]" style={{ color: '#475569' }}>
+          <p className="mb-10 text-[1rem] leading-[1.7]" style={{ color: '#475569' }}>
             A força está na estratégia que conecta todas elas.
           </p>
-
           <Link
             href="#contato"
-            className="inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl px-8 text-[0.9375rem] font-semibold text-white transition-colors duration-150 hover:opacity-90 active:scale-[0.98] max-sm:w-full"
+            className="inline-flex h-[52px] items-center justify-center gap-2.5 rounded-2xl px-8 text-[0.9375rem] font-semibold text-white transition-opacity duration-150 hover:opacity-90 active:scale-[0.98] max-sm:w-full"
             style={{ background: '#218B52' }}
           >
             Quero conhecer o ecossistema

@@ -59,7 +59,7 @@ export function FAQSection() {
         }}
       />
 
-      <div className="container-page relative py-[120px] max-lg:py-[80px]">
+      <div className="container-page relative py-[88px] max-lg:py-[64px]">
         {/* ── Header ───────────────────────────────────── */}
         <div className="mx-auto mb-14 text-center" style={{ maxWidth: '680px' }}>
           <p className="reveal mb-5 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>

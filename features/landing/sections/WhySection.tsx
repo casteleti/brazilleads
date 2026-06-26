@@ -1,30 +1,29 @@
-import Link from 'next/link'
-import { ArrowRight, Globe, Heart, Lightbulb } from 'lucide-react'
+/* ═══════════════════════════════════════════════════════
+   Section 05 — Nosso Diferencial
+   Layout assimétrico: headline editorial grande à esquerda,
+   3 pilares de texto à direita (sem cards com ícones).
+   Completamente diferente da Section 02 e Section 04.
+   Fundo #FFFFFF — ritmo visual.
+═══════════════════════════════════════════════════════ */
 
-const cards = [
+const pillars = [
   {
-    icon: Globe,
+    num: '01',
     title: 'Falamos a mesma língua',
-    text: 'Não apenas português. Entendemos como brasileiros pesquisam, perguntam, confiam e tomam decisões.',
+    text: 'Entendemos como brasileiros pesquisam, confiam e tomam decisões. Não apenas traduzimos — interpretamos.',
   },
   {
-    icon: Heart,
+    num: '02',
     title: 'Conhecemos sua realidade',
-    text: 'Empreender fora do Brasil exige estratégias diferentes. Construímos campanhas considerando o contexto onde você atua.',
+    text: 'Empreender fora do Brasil exige estratégias diferentes. Nós construímos campanhas considerando o contexto onde você atua.',
   },
   {
-    icon: Lightbulb,
+    num: '03',
     title: 'Marketing com contexto',
-    text: 'Mais do que gerar cliques. Criamos conexões entre brasileiros que procuram ajuda e brasileiros que decidiram empreender no exterior.',
+    text: 'Muito além de cliques. Criamos conexões entre brasileiros que procuram ajuda e brasileiros que decidiram empreender.',
   },
 ]
 
-/* ═══════════════════════════════════════════════════════
-   Section 05 — Por que Brazilleads?
-   Fundo branco #FFFFFF — alternância no ritmo visual.
-   Objetivo: conexão antes de confiança técnica.
-   Layout editorial: 52/48 esquerda conteúdo / direita cards.
-═══════════════════════════════════════════════════════ */
 export function WhySection() {
   return (
     <section
@@ -32,34 +31,30 @@ export function WhySection() {
       className="relative overflow-hidden"
       style={{ background: '#FFFFFF' }}
     >
-      {/* Radiais imperceptíveis */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse 55% 40% at 0% 50%, rgba(33,139,82,0.03) 0%, transparent 60%),' +
-            'radial-gradient(ellipse 45% 35% at 100% 20%, rgba(15,23,42,0.02) 0%, transparent 55%)',
+            'radial-gradient(ellipse 55% 40% at 0% 50%, rgba(33,139,82,0.025) 0%, transparent 60%),' +
+            'radial-gradient(ellipse 45% 35% at 100% 20%, rgba(15,23,42,0.015) 0%, transparent 55%)',
         }}
       />
 
-      <div className="container-page relative py-[120px] max-lg:py-[80px]">
-        <div className="grid grid-cols-1 items-start gap-[72px] lg:grid-cols-[52fr_48fr]">
-          {/* ─── LEFT — conteúdo editorial ─────────────── */}
-          <div className="flex flex-col">
-            {/* Eyebrow */}
-            <p className="reveal mb-7 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
+      <div className="container-page relative py-[100px] max-lg:py-[72px]">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[58fr_42fr] lg:gap-20">
+          {/* ─── LEFT — headline editorial grande ──────── */}
+          <div>
+            <p className="reveal mb-8 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
               Nosso diferencial
             </p>
 
-            {/* Headline */}
             <h2
-              className="reveal font-display mb-8 tracking-tight"
+              className="reveal font-display tracking-tight"
               style={{
-                fontSize: 'clamp(2.375rem, 4vw, 3.25rem)',
-                lineHeight: '1.05',
+                fontSize: 'clamp(2.625rem, 5vw, 4rem)',
+                lineHeight: '1.0',
                 color: '#0F2747',
-                maxWidth: '580px',
               }}
             >
               Conhecer a plataforma é importante.{' '}
@@ -68,96 +63,57 @@ export function WhySection() {
               </em>
             </h2>
 
-            {/* Supporting copy */}
+            {/* Quote — separador visual */}
             <div
-              className="reveal mb-12 space-y-4 text-[1.0625rem] leading-[1.7]"
-              style={{ color: '#475569', maxWidth: '520px' }}
+              className="reveal mt-10 pt-10"
+              style={{ borderTop: '1px solid rgba(15,23,42,0.07)' }}
             >
-              <p>Toda campanha começa muito antes do primeiro anúncio.</p>
-              <p>
-                Ela começa entendendo como brasileiros pesquisam, em quem confiam e por que escolhem
-                um negócio em vez de outro.
-              </p>
-              <p>É essa compreensão que torna uma estratégia realmente eficiente.</p>
-            </div>
-
-            {/* Highlight quote block */}
-            <div
-              className="reveal mb-12 rounded-[28px] p-8"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid rgba(15,23,42,0.08)',
-                boxShadow: '0 4px 40px rgba(15,23,42,0.06)',
-              }}
-            >
-              {/* Decorative quote mark */}
-              <div
-                className="font-display mb-3 leading-none"
-                aria-hidden
-                style={{
-                  fontSize: 'clamp(3rem, 5vw, 4rem)',
-                  color: 'rgba(33,139,82,0.18)',
-                  lineHeight: 1,
-                }}
-              >
-                &ldquo;
-              </div>
               <blockquote
-                className="font-display leading-snug"
+                className="font-display"
                 style={{
-                  fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)',
-                  color: '#0F2747',
+                  fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
+                  lineHeight: '1.35',
+                  color: 'rgba(15,39,71,0.40)',
+                  fontStyle: 'italic',
                 }}
               >
-                Antes de pensar em anúncios, pensamos nas pessoas.
+                &ldquo;Antes de pensar em anúncios,
+                <br />
+                pensamos nas pessoas.&rdquo;
               </blockquote>
-            </div>
-
-            {/* CTA */}
-            <div className="reveal">
-              <Link
-                href="#contato"
-                className="inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl px-8 text-[0.9375rem] font-semibold text-white transition-colors duration-150 hover:opacity-90 active:scale-[0.98]"
-                style={{ background: '#218B52' }}
-              >
-                Quero conhecer a Brazilleads
-                <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-              </Link>
             </div>
           </div>
 
-          {/* ─── RIGHT — 3 cards empilhados ─────────────── */}
-          <div className="flex flex-col gap-6">
-            {cards.map(({ icon: Icon, title, text }, i) => (
+          {/* ─── RIGHT — 3 pilares de texto ─────────── */}
+          <div className="flex flex-col gap-0">
+            {pillars.map(({ num, title, text }, i) => (
               <div
-                key={i}
-                className="reveal rounded-[28px] border bg-white"
+                key={num}
+                className="reveal py-8"
                 style={{
-                  borderColor: 'rgba(15,23,42,0.08)',
-                  boxShadow: '0 2px 16px rgba(15,23,42,0.04)',
-                  padding: '36px 32px',
+                  borderTop: i === 0 ? '1px solid rgba(15,23,42,0.07)' : 'none',
+                  borderBottom: '1px solid rgba(15,23,42,0.07)',
                 }}
               >
-                {/* Ícone */}
-                <div
-                  className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{ background: '#F6F8F5' }}
-                >
-                  <Icon className="h-6 w-6" style={{ color: '#218B52' }} strokeWidth={1.5} />
+                <div className="flex items-start gap-5">
+                  <span
+                    className="font-num mt-0.5 shrink-0 text-[0.6875rem] font-semibold tracking-widest"
+                    style={{ color: '#218B52' }}
+                  >
+                    {num}
+                  </span>
+                  <div>
+                    <h3
+                      className="font-display mb-2 leading-snug"
+                      style={{ fontSize: '1.125rem', color: '#0F2747' }}
+                    >
+                      {title}
+                    </h3>
+                    <p className="text-[0.875rem] leading-[1.7]" style={{ color: '#64748b' }}>
+                      {text}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Título */}
-                <h3
-                  className="font-display mb-3 leading-snug"
-                  style={{ fontSize: '1.1875rem', color: '#0F2747' }}
-                >
-                  {title}
-                </h3>
-
-                {/* Texto */}
-                <p className="text-[0.9375rem] leading-[1.7]" style={{ color: '#475569' }}>
-                  {text}
-                </p>
               </div>
             ))}
           </div>

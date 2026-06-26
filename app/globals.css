@@ -338,6 +338,15 @@
   overflow: hidden;
 }
 
+/* Nav links — header desktop */
+.nav-link {
+  color: #64748b;
+  transition: color 150ms ease;
+}
+.nav-link:hover {
+  color: #0f2747;
+}
+
 /* Footer links hover — sem event handlers inline (Server Component) */
 .footer-link {
   color: rgba(255, 255, 255, 0.5);
