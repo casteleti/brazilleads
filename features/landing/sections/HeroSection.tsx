@@ -42,14 +42,14 @@ export function HeroSection() {
               </span>
             </div>
 
-            {/* Headline — 64px desktop, 40px mobile */}
-            <h1 className="font-display hero-fade-2 text-brand-navy mb-5 text-[2.5rem] leading-[1.06] tracking-tight lg:text-[4rem] lg:leading-[0.98]">
-              Você construiu <span className="lg:block">um negócio.</span>{' '}
-              <em className="text-brand-green italic">
-                Agora as pessoas
-                <br className="hidden lg:block" /> certas precisam
-              </em>{' '}
-              encontrá-lo.
+            {/* Headline — 48px desktop / 38px mobile, 3 linhas */}
+            <h1 className="font-display hero-fade-2 text-brand-navy mb-5 text-[2.375rem] leading-[1.05] tracking-tight lg:text-[3rem] lg:leading-[1.0]">
+              Você construiu um negócio.{' '}
+              <em className="text-brand-green italic lg:block">
+                Agora as pessoas certas
+                <br className="hidden lg:block" />
+                precisam encontrá-lo.
+              </em>
             </h1>
 
             {/* Supporting copy — max 19 words, 2 sentences */}
