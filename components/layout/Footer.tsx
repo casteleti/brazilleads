@@ -29,19 +29,19 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto_auto]">
           {/* Brand */}
           <div style={{ maxWidth: '320px' }}>
-            <div className="mb-4 flex items-center gap-2.5">
-              <div
-                className="font-num flex h-8 w-8 items-center justify-center rounded-lg text-[0.75rem] font-black text-white"
-                style={{ background: '#218B52' }}
-              >
-                BL
-              </div>
-              <span
-                className="font-num text-[1rem] font-semibold tracking-tight"
-                style={{ color: 'rgba(255,255,255,0.90)' }}
-              >
-                Brazilleads
-              </span>
+            <div className="mb-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/imgs/logo_brazilleads.png"
+                alt="Brazilleads"
+                style={{
+                  height: '28px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.9,
+                }}
+              />
             </div>
             <p
               className="text-[0.875rem] leading-[1.65]"

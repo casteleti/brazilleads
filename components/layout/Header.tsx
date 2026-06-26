@@ -46,19 +46,13 @@ export function Header() {
       >
         <div className="container-page flex h-[68px] items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <div
-              className="font-num flex h-8 w-8 items-center justify-center rounded-lg text-[0.75rem] font-black text-white"
-              style={{ background: '#218B52' }}
-            >
-              BL
-            </div>
-            <span
-              className="font-num text-[1rem] font-semibold tracking-tight"
-              style={{ color: '#0F2747' }}
-            >
-              Brazilleads
-            </span>
+          <Link href="/" className="flex shrink-0 items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/imgs/logo_brazilleads.png"
+              alt="Brazilleads"
+              style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -121,16 +115,13 @@ export function Header() {
           className="flex items-center justify-between px-6 py-5"
           style={{ borderBottom: '1px solid rgba(15,23,42,0.07)' }}
         >
-          <div className="flex items-center gap-2.5">
-            <div
-              className="font-num flex h-7 w-7 items-center justify-center rounded-md text-[0.6875rem] font-black text-white"
-              style={{ background: '#218B52' }}
-            >
-              BL
-            </div>
-            <span className="font-num text-[0.9375rem] font-semibold" style={{ color: '#0F2747' }}>
-              Brazilleads
-            </span>
+          <div className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/imgs/logo_brazilleads.png"
+              alt="Brazilleads"
+              style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
+            />
           </div>
           <button
             onClick={close}
