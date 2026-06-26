@@ -51,7 +51,7 @@ export function Header() {
             <img
               src="/imgs/logo_brazilleads.png"
               alt="Brazilleads"
-              style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
             />
           </Link>
 
