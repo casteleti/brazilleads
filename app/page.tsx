@@ -7,6 +7,8 @@ import { ProblemSection } from '@/features/landing/sections/ProblemSection'
 import { PositioningSection } from '@/features/landing/sections/PositioningSection'
 import { MethodologySection } from '@/features/landing/sections/MethodologySection'
 import { WhySection } from '@/features/landing/sections/WhySection'
+import { EcosystemSection } from '@/features/landing/sections/EcosystemSection'
+import { BusinessesSection } from '@/features/landing/sections/BusinessesSection'
 import { SocialProofSection } from '@/features/landing/sections/SocialProofSection'
 import { FAQSection } from '@/features/landing/sections/FAQSection'
 import { PricingSection } from '@/features/landing/sections/PricingSection'
@@ -29,6 +31,8 @@ export default function HomePage() {
         <PositioningSection />
         <MethodologySection />
         <WhySection />
+        <EcosystemSection />
+        <BusinessesSection />
         <SocialProofSection />
         <FAQSection />
         <PricingSection />

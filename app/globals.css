@@ -324,3 +324,26 @@
     transform: none;
   }
 }
+
+/* Business cards hover */
+.business-card {
+  transition:
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease;
+}
+@media (hover: hover) {
+  .business-card:hover {
+    transform: translateY(-4px);
+    border-color: #218b52 !important;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .business-card {
+    transition: border-color 200ms ease;
+  }
+  .business-card:hover {
+    transform: none;
+  }
+}
