@@ -134,7 +134,7 @@ export function FAQSection() {
                 </button>
 
                 {/* Answer — grid-rows animation (globals.css: .faq-body) */}
-                <div className={`faq-body${isOpen ? 'is-open' : ''}`}>
+                <div className={isOpen ? 'faq-body is-open' : 'faq-body'}>
                   <div>
                     <p
                       className="px-8 pb-6 text-[0.9375rem] leading-[1.7]"
