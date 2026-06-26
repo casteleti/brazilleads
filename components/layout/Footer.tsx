@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Linkedin, Mail, MessageCircle } from 'lucide-react'
+import { ExternalLink, Globe, Mail, MessageCircle } from 'lucide-react'
 
 /* ═══════════════════════════════════════════════════════
    Footer — Minimal, premium, escuro.
@@ -18,8 +18,8 @@ const nav = [
 const social = [
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/+1000000000' },
   { icon: Mail, label: 'E-mail', href: 'mailto:hello@brazilleads.com' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
+  { icon: Globe, label: 'Instagram', href: '#' },
+  { icon: ExternalLink, label: 'LinkedIn', href: '#' },
 ]
 
 export function Footer() {
