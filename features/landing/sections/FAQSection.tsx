@@ -1,97 +1,165 @@
 'use client'
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { useState } from 'react'
+import { Plus, Minus } from 'lucide-react'
+
+/* ═══════════════════════════════════════════════════════
+   Section 08 — FAQ
+   Fundo #F6F8F5 — fecha o ritmo visual antes do CTA final.
+   Acordeão: um item aberto por vez. Animação via grid-rows.
+═══════════════════════════════════════════════════════ */
 
 const faqs = [
   {
-    q: 'Quanto tempo até ver resultado?',
-    a: '15 dias você já percebe mudanças na performance. 30 dias resultado claro e mensurável. 60 dias transformação real. O tempo exato depende do seu ponto de partida — por isso começamos com uma auditoria.',
+    q: 'Vocês atendem qualquer tipo de negócio?',
+    a: 'Atendemos empresas que desejam atrair clientes brasileiros no país onde atuam. Antes de iniciar qualquer projeto, avaliamos se existe potencial para gerar resultados consistentes.',
   },
   {
-    q: 'Tem contrato de fidelidade?',
-    a: 'Não. Nosso serviço mensal é mês a mês. Você pode cancelar a qualquer momento com 30 dias de aviso. Acreditamos que resultado retém cliente, não contrato.',
+    q: 'Vocês atendem qualquer país?',
+    a: 'Sim. Nossa estratégia é adaptada ao mercado local e ao comportamento dos brasileiros em cada região do mundo.',
   },
   {
-    q: 'Como funciona o suporte com o fuso horário?',
-    a: 'Você dorme, a gente otimiza. Trabalhamos enquanto você descansa. Reunião mensal é agendada no seu horário. Suporte via WhatsApp para urgências — respondemos em até 2 horas.',
+    q: 'Preciso ter um site?',
+    a: 'Nem sempre. Dependendo da estratégia, podemos utilizar landing pages desenvolvidas especificamente para conversão, sem necessidade de um site completo.',
   },
   {
-    q: 'Vocês falam português mesmo?',
-    a: 'Sim. Todas as reuniões, relatórios e comunicações são em português. Não é tradução automática — é português de verdade, com contexto cultural brasileiro.',
+    q: 'Em quanto tempo começo a ver resultados?',
+    a: 'Isso depende do segmento, da concorrência e do investimento. Nosso foco é construir crescimento consistente e sustentável — não resultados artificiais de curto prazo.',
   },
   {
-    q: 'E se não funcionar?',
-    a: 'Garantia de 60 dias: se não houver melhora mensurável na performance, devolvemos o valor. Só ganhamos quando você ganha.',
+    q: 'Existe contrato de fidelidade?',
+    // ⚠️  EDITAR: inserir política comercial real aqui
+    a: 'Entre em contato para conhecer nossas condições comerciais. Apresentaremos todas as informações durante a conversa inicial, sem letras miúdas.',
   },
   {
-    q: 'Precisam de acesso à minha conta?',
-    a: 'Sim, acesso de visualização e edição às suas contas de Google Ads (e Meta, se aplicável). Explicamos exatamente quais permissões são necessárias e como conceder com segurança.',
+    q: 'Quanto preciso investir?',
+    a: 'Cada projeto recebe uma estratégia personalizada. O investimento varia conforme os objetivos, o mercado e o potencial do segmento. Apresentamos um plano detalhado após o diagnóstico inicial.',
   },
   {
-    q: 'Qual a diferença para uma agência local?',
-    a: 'Agências locais não entendem o contexto cultural brasileiro, não falam português e cobram 60–70% mais. Nós entendemos os dois mercados, trabalhamos enquanto você dorme e somos acessíveis.',
-  },
-  {
-    q: 'Trabalham só com Google Ads?',
-    a: 'O foco principal é Google Ads. Meta Ads pode ser incluído como complemento na gestão mensal. A auditoria analisa sua situação e recomenda o que faz mais sentido para o seu negócio.',
-  },
-  {
-    q: 'Com quantos países vocês trabalham?',
-    a: 'USA, Canadá, Austrália e Portugal. Pode ser um país específico ou todos ao mesmo tempo, dependendo da sua operação.',
-  },
-  {
-    q: 'Preciso mudar minha página de vendas?',
-    a: 'Depende. Na auditoria avaliamos sua landing page e indicamos se precisa de ajuste. Às vezes o problema está nos anúncios, não na página — só os dados dizem.',
+    q: 'Como funciona o atendimento?',
+    a: 'Todo o acompanhamento acontece em português, de forma próxima, transparente e orientada por resultados. Você sempre sabe o que está sendo feito e por quê.',
   },
 ]
 
 export function FAQSection() {
+  const [open, setOpen] = useState<number | null>(null)
+
+  const toggle = (i: number) => setOpen((prev) => (prev === i ? null : i))
+
   return (
-    <section className="section-standard bg-brand-navy-tint">
-      <div className="container-page">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="label-eyebrow mb-3">Dúvidas frequentes</p>
-          <h2 className="font-display text-brand-navy mb-4 text-3xl md:text-4xl">
-            Perguntas que Todo Mundo Faz
+    <section id="faq" className="relative overflow-hidden" style={{ background: '#F6F8F5' }}>
+      {/* Radiais sutis */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 55% 40% at 50% 0%, rgba(33,139,82,0.04) 0%, transparent 60%),' +
+            'radial-gradient(ellipse 40% 30% at 50% 100%, rgba(15,23,42,0.02) 0%, transparent 55%)',
+        }}
+      />
+
+      <div className="container-page relative py-[120px] max-lg:py-[80px]">
+        {/* ── Header ───────────────────────────────────── */}
+        <div className="mx-auto mb-14 text-center" style={{ maxWidth: '680px' }}>
+          <p className="reveal mb-5 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
+            Perguntas frequentes
+          </p>
+
+          <h2
+            className="reveal font-display mb-5 tracking-tight"
+            style={{
+              fontSize: 'clamp(2.375rem, 4vw, 3.25rem)',
+              lineHeight: '1.05',
+              color: '#0F2747',
+            }}
+          >
+            Ainda tem alguma dúvida?
           </h2>
-          <p className="text-brand-muted mb-12 text-lg">Respostas honestas, sem enrolação.</p>
+
+          <p className="reveal text-[1.0625rem] leading-[1.65]" style={{ color: '#475569' }}>
+            Respondemos às dúvidas mais comuns para que você possa tomar sua decisão com
+            tranquilidade.
+          </p>
         </div>
 
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
+        {/* ── Accordion ────────────────────────────────── */}
+        <div className="mx-auto space-y-3" style={{ maxWidth: '900px' }}>
+          {faqs.map(({ q, a }, i) => {
+            const isOpen = open === i
+            return (
+              <div
                 key={i}
-                value={`item-${i}`}
-                className="border-brand-border data-[state=open]:border-brand-navy-tint rounded-lg border bg-white px-6 shadow-sm"
+                className="reveal overflow-hidden rounded-[28px] border bg-white"
+                style={{
+                  borderColor: isOpen ? 'rgba(33,139,82,0.25)' : 'rgba(15,23,42,0.08)',
+                  boxShadow: isOpen
+                    ? '0 4px 32px rgba(15,23,42,0.07)'
+                    : '0 2px 12px rgba(15,23,42,0.04)',
+                  transition: 'border-color 200ms ease, box-shadow 200ms ease',
+                }}
               >
-                <AccordionTrigger className="font-display text-brand-navy py-5 text-left text-base hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-brand-body pb-5 text-base leading-relaxed">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                {/* Question row */}
+                <button
+                  onClick={() => toggle(i)}
+                  className="flex w-full items-center justify-between gap-6 px-8 py-6 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <span
+                    className="font-display text-[1.0625rem] leading-snug"
+                    style={{ color: '#0F2747' }}
+                  >
+                    {q}
+                  </span>
+                  <span
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-150"
+                    style={{
+                      background: isOpen ? 'rgba(33,139,82,0.1)' : 'rgba(15,23,42,0.05)',
+                    }}
+                  >
+                    {isOpen ? (
+                      <Minus
+                        className="h-3.5 w-3.5"
+                        style={{ color: '#218B52' }}
+                        strokeWidth={2.5}
+                      />
+                    ) : (
+                      <Plus
+                        className="h-3.5 w-3.5"
+                        style={{ color: '#475569' }}
+                        strokeWidth={2.5}
+                      />
+                    )}
+                  </span>
+                </button>
 
-          <div className="bg-brand-navy-tint mt-8 rounded-lg p-6 text-center">
-            <p className="text-brand-body">
-              Ainda tem dúvidas?{' '}
-              <a
-                href="#contato"
-                className="text-brand-navy hover:text-brand-navy-mid font-semibold underline underline-offset-2"
-              >
-                Fale no WhatsApp
-              </a>{' '}
-              — respondemos em até 2 horas.
-            </p>
-          </div>
+                {/* Answer — grid-rows animation (globals.css: .faq-body) */}
+                <div className={`faq-body${isOpen ? 'is-open' : ''}`}>
+                  <div>
+                    <p
+                      className="px-8 pb-6 text-[0.9375rem] leading-[1.7]"
+                      style={{ color: '#475569' }}
+                    >
+                      {a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* ── Reassurance ──────────────────────────────── */}
+        <div className="reveal mx-auto mt-12 text-center" style={{ maxWidth: '480px' }}>
+          <p className="text-[0.9375rem] leading-[1.7]" style={{ color: '#475569' }}>
+            Ainda não encontrou sua resposta?
+          </p>
+          <p
+            className="text-[0.9375rem] leading-[1.7]"
+            style={{ color: '#218B52', fontWeight: 500 }}
+          >
+            Nossa equipe terá prazer em conversar com você.
+          </p>
         </div>
       </div>
     </section>

@@ -1,78 +1,129 @@
 import Link from 'next/link'
+import { Instagram, Linkedin, Mail, MessageCircle } from 'lucide-react'
+
+/* ═══════════════════════════════════════════════════════
+   Footer — Minimal, premium, escuro.
+   Fundo ligeiramente mais escuro que o CTA final (#0F2747).
+   Uma linha de separação sutil no topo.
+═══════════════════════════════════════════════════════ */
+
+const nav = [
+  { label: 'Início', href: '#hero-section' },
+  { label: 'Como Funciona', href: '#como-funciona' },
+  { label: 'Quem Atendemos', href: '#segmentos' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contato', href: '#contato' },
+]
+
+const social = [
+  { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/+1000000000' },
+  { icon: Mail, label: 'E-mail', href: 'mailto:hello@brazilleads.com' },
+  { icon: Instagram, label: 'Instagram', href: '#' },
+  { icon: Linkedin, label: 'LinkedIn', href: '#' },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-brand-navy border-t border-white/10 py-12">
-      <div className="container-page">
-        <div className="grid gap-8 md:grid-cols-4">
+    <footer
+      style={{
+        background: '#081628',
+        borderTop: '1px solid rgba(255,255,255,0.07)',
+      }}
+    >
+      <div className="container-page py-16 max-lg:py-12">
+        {/* ── Main row ─────────────────────────────────── */}
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto_auto]">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="mb-3 flex items-center gap-2">
-              <div className="bg-brand-green font-num flex h-8 w-8 items-center justify-center rounded-md text-sm font-black text-white">
+          <div style={{ maxWidth: '320px' }}>
+            <div className="mb-4 flex items-center gap-2.5">
+              <div
+                className="font-num flex h-8 w-8 items-center justify-center rounded-lg text-[0.75rem] font-black text-white"
+                style={{ background: '#218B52' }}
+              >
                 BL
               </div>
-              <span className="font-num font-semibold tracking-tight text-white">Brazilleads</span>
+              <span
+                className="font-num text-[1rem] font-semibold tracking-tight"
+                style={{ color: 'rgba(255,255,255,0.90)' }}
+              >
+                Brazilleads
+              </span>
             </div>
-            <p className="mb-4 max-w-xs text-sm leading-relaxed text-white/55">
-              Crescimento pros nossos lá fora. Google Ads para empresários brasileiros em USA,
-              Canadá, Austrália e Portugal.
+            <p
+              className="text-[0.875rem] leading-[1.65]"
+              style={{ color: 'rgba(255,255,255,0.45)' }}
+            >
+              Conectando brasileiros no exterior às pessoas que já procuram pelos seus serviços.
             </p>
-            <p className="text-xs text-white/40">hello@brazilleads.com</p>
           </div>
 
-          {/* Services */}
+          {/* Navigation */}
           <div>
-            <p className="font-num mb-4 text-xs font-semibold tracking-wider text-white/60 uppercase">
-              Serviços
+            <p
+              className="mb-5 text-[0.6875rem] font-semibold tracking-[0.08em] uppercase"
+              style={{ color: 'rgba(255,255,255,0.35)' }}
+            >
+              Navegação
             </p>
-            <ul className="space-y-2 text-sm text-white/55">
-              <li>
-                <Link
-                  href="#como-funciona"
-                  className="duration-fast transition-colors hover:text-white"
-                >
-                  Como funciona
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#investimento"
-                  className="duration-fast transition-colors hover:text-white"
-                >
-                  Preços
-                </Link>
-              </li>
-              <li>
-                <Link href="#contato" className="duration-fast transition-colors hover:text-white">
-                  Agendar conversa
-                </Link>
-              </li>
+            <ul className="space-y-3">
+              {nav.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-[0.875rem] transition-colors duration-150"
+                    style={{ color: 'rgba(255,255,255,0.50)' }}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)')
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.50)')
+                    }
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Countries */}
+          {/* Contact */}
           <div>
-            <p className="font-num mb-4 text-xs font-semibold tracking-wider text-white/60 uppercase">
-              Países
+            <p
+              className="mb-5 text-[0.6875rem] font-semibold tracking-[0.08em] uppercase"
+              style={{ color: 'rgba(255,255,255,0.35)' }}
+            >
+              Contato
             </p>
-            <ul className="space-y-2 text-sm text-white/55">
-              {['Canadá', 'USA', 'Austrália', 'Portugal'].map((c) => (
-                <li key={c}>{c}</li>
+            <ul className="space-y-3">
+              {social.map(({ icon: Icon, label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-2.5 text-[0.875rem] transition-colors duration-150"
+                    style={{ color: 'rgba(255,255,255,0.50)' }}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)')
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.50)')
+                    }
+                  >
+                    <Icon className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/35 md:flex-row">
-          <p>© {new Date().getFullYear()} Brazilleads. Todos os direitos reservados.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="transition-colors hover:text-white/70">
-              Privacidade
-            </Link>
-            <Link href="/terms" className="transition-colors hover:text-white/70">
-              Termos
-            </Link>
-          </div>
+        {/* ── Bottom bar ───────────────────────────────── */}
+        <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+          <p className="text-[0.75rem]" style={{ color: 'rgba(255,255,255,0.28)' }}>
+            © Brazilleads — Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

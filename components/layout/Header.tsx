@@ -23,7 +23,7 @@ export function Header() {
             Como funciona
           </Link>
           <Link
-            href="#investimento"
+            href="#faq"
             className="text-brand-muted hover:text-brand-navy duration-fast text-sm transition-colors"
           >
             Preços

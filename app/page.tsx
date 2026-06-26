@@ -9,16 +9,14 @@ import { MethodologySection } from '@/features/landing/sections/MethodologySecti
 import { WhySection } from '@/features/landing/sections/WhySection'
 import { EcosystemSection } from '@/features/landing/sections/EcosystemSection'
 import { BusinessesSection } from '@/features/landing/sections/BusinessesSection'
-import { SocialProofSection } from '@/features/landing/sections/SocialProofSection'
 import { FAQSection } from '@/features/landing/sections/FAQSection'
-import { PricingSection } from '@/features/landing/sections/PricingSection'
-import { ContactSection } from '@/features/landing/sections/ContactSection'
+import { FinalCTASection } from '@/features/landing/sections/FinalCTASection'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Brazilleads | Crescimento para Brasileiros no Exterior',
   description:
-    'Especialista em Google Ads para empresários brasileiros nos EUA, Canadá, Austrália e Portugal. Suporte em português. Resultado em 30 dias.',
+    'Especialista em marketing digital para empresários brasileiros nos EUA, Canadá, Austrália e Portugal. Suporte em português.',
 }
 
 export default function HomePage() {
@@ -26,17 +24,24 @@ export default function HomePage() {
     <>
       <Header />
       <main>
+        {/* 01 */}
         <HeroSection />
+        {/* 02 */}
         <ProblemSection />
+        {/* 03 */}
         <PositioningSection />
+        {/* 04 */}
         <MethodologySection />
+        {/* 05 */}
         <WhySection />
+        {/* 06 */}
         <EcosystemSection />
+        {/* 07 */}
         <BusinessesSection />
-        <SocialProofSection />
+        {/* 08 */}
         <FAQSection />
-        <PricingSection />
-        <ContactSection />
+        {/* 09 */}
+        <FinalCTASection />
       </main>
       <Footer />
       <StickyBottomCTA />
