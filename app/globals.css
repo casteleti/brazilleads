@@ -338,6 +338,15 @@
   overflow: hidden;
 }
 
+/* Footer links hover — sem event handlers inline (Server Component) */
+.footer-link {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 150ms ease;
+}
+.footer-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* Business cards hover */
 .business-card {
   transition:

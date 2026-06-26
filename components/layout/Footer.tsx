@@ -1,12 +1,6 @@
 import Link from 'next/link'
 import { ExternalLink, Globe, Mail, MessageCircle } from 'lucide-react'
 
-/* ═══════════════════════════════════════════════════════
-   Footer — Minimal, premium, escuro.
-   Fundo ligeiramente mais escuro que o CTA final (#0F2747).
-   Uma linha de separação sutil no topo.
-═══════════════════════════════════════════════════════ */
-
 const nav = [
   { label: 'Início', href: '#hero-section' },
   { label: 'Como Funciona', href: '#como-funciona' },
@@ -68,17 +62,7 @@ export function Footer() {
             <ul className="space-y-3">
               {nav.map(({ label, href }) => (
                 <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-[0.875rem] transition-colors duration-150"
-                    style={{ color: 'rgba(255,255,255,0.50)' }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)')
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.50)')
-                    }
-                  >
+                  <Link href={href} className="footer-link text-[0.875rem]">
                     {label}
                   </Link>
                 </li>
@@ -101,14 +85,7 @@ export function Footer() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-2.5 text-[0.875rem] transition-colors duration-150"
-                    style={{ color: 'rgba(255,255,255,0.50)' }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.85)')
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.50)')
-                    }
+                    className="footer-link flex items-center gap-2.5 text-[0.875rem]"
                   >
                     <Icon className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                     {label}
