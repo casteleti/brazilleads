@@ -450,23 +450,61 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Business cards hover */
+/* Business cards hover — top accent line + icon + lift */
 .business-card {
+  position: relative;
+  overflow: hidden;
   transition:
     transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 200ms ease;
 }
+.business-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #218b52;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0 0 2px 2px;
+}
+.business-icon {
+  transition:
+    background 250ms ease,
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.business-name {
+  transition: color 200ms ease;
+}
 @media (hover: hover) {
   .business-card:hover {
-    transform: translateY(-4px);
-    border-color: #218b52 !important;
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1) !important;
+    transform: translateY(-3px);
+    border-color: rgba(33, 139, 82, 0.28) !important;
+    box-shadow:
+      0 8px 32px rgba(15, 23, 42, 0.09),
+      0 2px 8px rgba(15, 23, 42, 0.05) !important;
+  }
+  .business-card:hover::before {
+    transform: scaleX(1);
+  }
+  .business-card:hover .business-icon {
+    background: rgba(33, 139, 82, 0.1) !important;
+    transform: scale(1.05);
+  }
+  .business-card:hover .business-name {
+    color: #218b52 !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .business-card {
-    transition: border-color 200ms ease;
+  .business-card,
+  .business-card::before,
+  .business-icon,
+  .business-name {
+    transition: none;
   }
   .business-card:hover {
     transform: none;
