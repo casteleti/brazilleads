@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyBottomCTA } from '@/components/layout/StickyBottomCTA'
+import { ScrollReveal } from '@/components/layout/ScrollReveal'
 import { HeroSection } from '@/features/landing/sections/HeroSection'
 import { ProblemSection } from '@/features/landing/sections/ProblemSection'
 import { PositioningSection } from '@/features/landing/sections/PositioningSection'
@@ -33,6 +34,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <StickyBottomCTA />
+      <ScrollReveal />
     </>
   )
 }
