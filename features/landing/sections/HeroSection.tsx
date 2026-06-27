@@ -136,6 +136,8 @@ export function HeroSection() {
               <img
                 src="/imgs/negocio-brasileiro-no-exterior.png"
                 alt="Restaurante brasileiro em Nova York — negócio brasileiro no exterior"
+                width={880}
+                height={440}
                 className="absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: '18% center' }}
               />
@@ -271,6 +273,8 @@ export function HeroSection() {
             <img
               src="/imgs/negocio-brasileiro-no-exterior.png"
               alt="Restaurante brasileiro no exterior"
+              width={800}
+              height={600}
               className="absolute inset-0 h-full w-full object-cover"
               style={{ objectPosition: '18% center' }}
             />

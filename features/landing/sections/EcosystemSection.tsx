@@ -335,6 +335,8 @@ export function EcosystemSection() {
             <img
               src="/imgs/logo_brazilleads.png"
               alt="Brazilleads"
+              width={260}
+              height={44}
               style={{
                 maxWidth: '260px',
                 height: 'auto',
@@ -409,6 +411,8 @@ export function EcosystemSection() {
             <img
               src="/imgs/logo_brazilleads.png"
               alt="Brazilleads"
+              width={180}
+              height={32}
               style={{ maxWidth: '180px', height: 'auto', maxHeight: '32px', objectFit: 'contain' }}
             />
             <p

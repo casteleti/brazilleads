@@ -34,6 +34,8 @@ export function Footer() {
               <img
                 src="/imgs/logo_brazilleads_branco.png"
                 alt="Brazilleads"
+                width={200}
+                height={28}
                 style={{ height: '28px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
               />
             </div>

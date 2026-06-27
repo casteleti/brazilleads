@@ -100,6 +100,8 @@ export function ProblemSection() {
               <img
                 src="/imgs/negocio-invisivel-no-google.png"
                 alt="Negócios visíveis e invisíveis no Google"
+                width={1280}
+                height={720}
                 className="h-full w-full object-cover"
                 style={{ objectPosition: 'center center' }}
               />

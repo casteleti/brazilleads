@@ -52,6 +52,8 @@ export function Header() {
             <img
               src="/imgs/logo_brazilleads.png"
               alt="Brazilleads"
+              width={200}
+              height={38}
               style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
             />
           </Link>
@@ -122,6 +124,8 @@ export function Header() {
             <img
               src="/imgs/logo_brazilleads.png"
               alt="Brazilleads"
+              width={200}
+              height={26}
               style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
             />
           </div>
