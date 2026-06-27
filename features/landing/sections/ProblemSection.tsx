@@ -98,7 +98,7 @@ export function ProblemSection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/imgs/negocio-invisivel-no-google.png"
+                src="/imgs/negocio-invisivel-no-google.webp"
                 alt="Negócios visíveis e invisíveis no Google"
                 width={1280}
                 height={720}

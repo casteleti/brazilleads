@@ -134,7 +134,7 @@ export function HeroSection() {
               {/* Imagem principal */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/imgs/negocio-brasileiro-no-exterior.png"
+                src="/imgs/negocio-brasileiro-no-exterior.webp"
                 alt="Restaurante brasileiro em Nova York — negócio brasileiro no exterior"
                 width={880}
                 height={440}
@@ -272,7 +272,7 @@ export function HeroSection() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/imgs/negocio-brasileiro-no-exterior.png"
+              src="/imgs/negocio-brasileiro-no-exterior.webp"
               alt="Restaurante brasileiro no exterior"
               width={800}
               height={600}
