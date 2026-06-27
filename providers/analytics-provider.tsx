@@ -6,6 +6,7 @@ import { track } from '@/lib/tracking'
 
 const GA_ID = 'G-DHQ8SXE0FW'
 const PIXEL_ID = '1408932024403985'
+const CLARITY_ID = 'xd9nzn45f3'
 
 /** Scroll milestones to track (percent of page height). */
 const SCROLL_MILESTONES = [25, 50, 75, 100] as const
@@ -86,6 +87,20 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
         />
       </noscript>
       {/* End Meta Pixel Code */}
+
+      {/* Microsoft Clarity */}
+      <Script id="clarity-init" strategy="afterInteractive">
+        {`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;
+            t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "${CLARITY_ID}");
+        `}
+      </Script>
+      {/* End Microsoft Clarity */}
 
       <TrackingInit />
       {children}
