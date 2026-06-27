@@ -36,6 +36,7 @@ export function Footer() {
                 alt="Brazilleads"
                 width={200}
                 height={28}
+                loading="lazy"
                 style={{ height: '28px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
               />
             </div>

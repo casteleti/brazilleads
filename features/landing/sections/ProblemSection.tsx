@@ -102,6 +102,7 @@ export function ProblemSection() {
                 alt="Negócios visíveis e invisíveis no Google"
                 width={1280}
                 height={720}
+                loading="lazy"
                 className="h-full w-full object-cover"
                 style={{ objectPosition: 'center center' }}
               />

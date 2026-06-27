@@ -186,24 +186,35 @@ function Connectors({
             key={mod.id}
             style={{ position: 'absolute', top: centerY - 3.5, left: 0, right: 0, height: '7px' }}
           >
-            {/* Line */}
+            {/* Line — overflow:hidden wrapper enables GPU-composited transform animation */}
             <div
-              className={active ? '' : direction === 'right' ? 'eco-flow-right' : 'eco-flow-left'}
               style={{
                 position: 'absolute',
                 left: 3,
                 right: 3,
                 top: '2.75px',
                 height: '1.5px',
-                background: active ? '#218B52' : undefined,
-                backgroundImage: active ? 'none' : DASH_BG,
-                backgroundSize: '9px 1.5px',
-                backgroundRepeat: 'repeat-x',
+                overflow: 'hidden',
                 opacity: dimmed ? 0.15 : 1,
                 transition: 'opacity 200ms ease',
-                animationDelay: `${i * 0.4}s`,
               }}
-            />
+            >
+              <div
+                className={active ? '' : direction === 'right' ? 'eco-flow-right' : 'eco-flow-left'}
+                style={{
+                  position: 'absolute',
+                  left: -9,
+                  right: -9,
+                  top: 0,
+                  height: '1.5px',
+                  background: active ? '#218B52' : undefined,
+                  backgroundImage: active ? 'none' : DASH_BG,
+                  backgroundSize: '9px 1.5px',
+                  backgroundRepeat: 'repeat-x',
+                  animationDelay: `${i * 0.4}s`,
+                }}
+              />
+            </div>
             {/* Left dot */}
             <div
               style={{
@@ -337,6 +348,7 @@ export function EcosystemSection() {
               alt="Brazilleads"
               width={260}
               height={44}
+              loading="lazy"
               style={{
                 maxWidth: '260px',
                 height: 'auto',
@@ -413,6 +425,7 @@ export function EcosystemSection() {
               alt="Brazilleads"
               width={180}
               height={32}
+              loading="lazy"
               style={{ maxWidth: '180px', height: 'auto', maxHeight: '32px', objectFit: 'contain' }}
             />
             <p

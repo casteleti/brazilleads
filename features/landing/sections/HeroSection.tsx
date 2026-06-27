@@ -138,6 +138,7 @@ export function HeroSection() {
                 alt="Restaurante brasileiro em Nova York — negócio brasileiro no exterior"
                 width={880}
                 height={440}
+                fetchPriority="high"
                 className="absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: '18% center' }}
               />

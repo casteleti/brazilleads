@@ -325,28 +325,30 @@
   }
 }
 
-/* Ecosystem connector line animations */
+/* Ecosystem connector line animations — GPU-composited via transform */
 @keyframes ecoFlowRight {
   from {
-    background-position: 0 0;
+    transform: translateX(0);
   }
   to {
-    background-position: 9px 0;
+    transform: translateX(-9px);
   }
 }
 @keyframes ecoFlowLeft {
   from {
-    background-position: 9px 0;
+    transform: translateX(0);
   }
   to {
-    background-position: 0 0;
+    transform: translateX(9px);
   }
 }
 .eco-flow-right {
   animation: ecoFlowRight 1.3s linear infinite;
+  will-change: transform;
 }
 .eco-flow-left {
   animation: ecoFlowLeft 1.3s linear infinite;
+  will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
   .eco-flow-right,
