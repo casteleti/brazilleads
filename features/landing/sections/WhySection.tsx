@@ -137,8 +137,7 @@ export function WhySection() {
               className="reveal mt-8 text-[0.8125rem] leading-[1.6]"
               style={{ color: 'rgba(15,23,42,0.3)' }}
             >
-              Muito além de plataformas. É assim que construímos estratégias que conectam
-              brasileiros que empreendem no exterior a brasileiros que precisam do que você oferece.
+              Tecnologia conecta pessoas. Entender pessoas cria conexões que geram resultados.
             </p>
           </div>
         </div>
