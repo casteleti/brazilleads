@@ -34,7 +34,7 @@ export function PositioningSection() {
           A virada
         </p>
 
-        {/* Headline — uma afirmação por linha, quebra controlada */}
+        {/* Headline */}
         <h2
           className="reveal font-display mb-12 text-center tracking-tight"
           style={{
@@ -43,8 +43,8 @@ export function PositioningSection() {
             color: '#0F2747',
           }}
         >
-          O problema nunca foi o seu esforço.{' '}
-          <em style={{ color: '#218B52', fontStyle: 'italic' }}>Foi a sua visibilidade.</em>
+          Seu negócio já está pronto.{' '}
+          <em style={{ color: '#218B52', fontStyle: 'italic' }}>Agora ele precisa ser visto.</em>
         </h2>
 
         {/* Quote — elemento hero da seção */}
@@ -72,21 +72,21 @@ export function PositioningSection() {
                 color: '#0F2747',
               }}
             >
-              As pessoas não podem escolher
-              <br className="hidden sm:block" /> um negócio que nunca encontraram.
+              O crescimento começa quando sua empresa
+              <br className="hidden sm:block" /> passa a fazer parte da decisão.
             </blockquote>
           </div>
         </div>
 
-        {/* Closing — quieto, confiante */}
+        {/* Closing */}
         <div
           className="reveal mx-auto text-center text-[1.0625rem] leading-[1.7]"
           style={{ color: '#64748b', maxWidth: '440px' }}
         >
           <p>
-            Os negócios que crescem não são sempre os melhores que existem.
+            Crescimento não acontece por acaso.
             <br className="hidden sm:block" />
-            São os mais fáceis de encontrar.
+            Acontece quando sua empresa passa a ser encontrada.
           </p>
         </div>
       </div>
