@@ -281,12 +281,12 @@ export function EcosystemSection() {
             style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', lineHeight: '1.05', color: '#0F2747' }}
           >
             Um sistema integrado.{' '}
-            <em style={{ color: '#218B52', fontStyle: 'italic' }}>Não táticas isoladas.</em>
+            <em style={{ color: '#218B52', fontStyle: 'italic' }}>Não ações isoladas.</em>
           </h2>
 
           <p className="reveal text-[1rem] leading-[1.65]" style={{ color: '#475569' }}>
-            Cada canal tem uma função. Quando trabalham juntos, criam uma operação capaz de atrair,
-            qualificar e converter clientes de forma contínua.
+            Cada canal tem uma função: atrair, qualificar ou converter. Quando trabalham juntos,
+            criam uma operação contínua de aquisição de clientes.
           </p>
         </div>
 
