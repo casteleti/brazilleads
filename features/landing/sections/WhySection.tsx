@@ -10,18 +10,18 @@
 const pillars = [
   {
     num: '01',
-    title: 'A busca começa em português',
-    text: 'Brasileiros buscam em português, confiam em quem fala como eles e escolhem quem parece familiar. Nós entendemos esses padrões antes de criar qualquer campanha.',
+    title: 'A busca começa com identificação.',
+    text: 'Muito antes da compra, existe confiança. E confiança começa quando o cliente se sente compreendido.',
   },
   {
     num: '02',
-    title: 'Sabemos como eles tomam decisões',
-    text: 'Confiança, comunidade e proximidade moldam as escolhas dos brasileiros fora do Brasil. Esse comportamento é o ponto de partida — não uma variável.',
+    title: 'Sabemos como eles decidem.',
+    text: 'Entender como brasileiros no exterior escolhem uma empresa é o primeiro passo para construir uma estratégia eficiente.',
   },
   {
     num: '03',
-    title: 'Por isso nossas estratégias funcionam',
-    text: 'Quando você entende as pessoas, seus anúncios deixam de ser interrupções e passam a ser respostas. É assim que criamos resultados que se mantêm.',
+    title: 'A mensagem certa muda tudo.',
+    text: 'Quando você entende as pessoas, seus anúncios deixam de ser interrupções e passam a ser respostas.',
   },
 ]
 
