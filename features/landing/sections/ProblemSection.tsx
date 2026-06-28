@@ -27,10 +27,10 @@ export function ProblemSection() {
           {/* ─── LEFT — copy ─────────────────────────────── */}
           <div className="flex flex-col">
             <p className="reveal mb-6 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
-              A oportunidade invisível
+              A oportunidade que está diante de você.
             </p>
 
-            {/* Headline — curto, direto, impactante */}
+            {/* Headline */}
             <h2
               className="reveal font-display mb-6 tracking-tight"
               style={{
@@ -40,22 +40,22 @@ export function ProblemSection() {
                 maxWidth: '420px',
               }}
             >
-              Clientes não escolhem o melhor negócio.{' '}
+              Antes de escolher o melhor negócio,{' '}
               <em style={{ color: '#218B52', fontStyle: 'italic' }}>
-                Escolhem o que encontraram primeiro.
+                o cliente precisa encontrar você.
               </em>
             </h2>
 
-            {/* Supporting copy — uma verdade, sem overexplain */}
+            {/* Supporting copy */}
             <p
               className="reveal mb-8 text-[1rem] leading-[1.7]"
               style={{ color: '#475569', maxWidth: '380px' }}
             >
-              Quando alguém precisa de um serviço, abre o Google e decide em segundos. Se o seu
-              negócio não aparece, ele simplesmente não é considerado.
+              Quando surge uma necessidade, a busca começa no Google. Se sua empresa não aparece, o
+              cliente encontra seu concorrente.
             </p>
 
-            {/* Insight card — conclusão da seção */}
+            {/* Insight card */}
             <div
               className="reveal rounded-2xl p-5"
               style={{
