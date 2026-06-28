@@ -13,8 +13,8 @@ const steps = [
   {
     icon: Search,
     num: '01',
-    title: 'Aprendemos antes de agir',
-    text: 'Antes do primeiro anúncio, entendemos o seu mercado, a sua cidade e como seus clientes tomam decisões. Estratégia antes de execução.',
+    title: 'Estratégia antes da execução.',
+    text: 'Entendemos seu mercado, seus clientes e as oportunidades antes de qualquer campanha.',
     accent: 'rgba(33,139,82,0.12)',
     bg: '#FFFFFF',
     border: 'rgba(15,23,42,0.08)',
@@ -22,8 +22,8 @@ const steps = [
   {
     icon: Target,
     num: '02',
-    title: 'Você aparece para quem já procura',
-    text: 'Posicionamos o seu negócio no momento exato em que brasileiros estão buscando o serviço que você oferece — com intenção real de contratar.',
+    title: 'Você aparece para quem já procura.',
+    text: 'Posicionamos sua empresa diante de clientes que já estão procurando exatamente o que você oferece.',
     accent: 'rgba(33,139,82,0.18)',
     bg: '#FFFFFF',
     border: 'rgba(15,23,42,0.08)',
@@ -31,8 +31,8 @@ const steps = [
   {
     icon: BarChart2,
     num: '03',
-    title: 'Melhoramos com base em resultados',
-    text: 'Analisamos o que funciona e ajustamos continuamente. Cada decisão é tomada a partir de dados reais — não de intuição.',
+    title: 'Decisões baseadas em dados.',
+    text: 'Analisamos os resultados e otimizamos continuamente. Cada decisão é guiada por dados, não por suposições.',
     accent: 'rgba(33,139,82,0.25)',
     bg: '#FFFFFF',
     border: 'rgba(15,23,42,0.08)',
@@ -40,8 +40,8 @@ const steps = [
   {
     icon: TrendingUp,
     num: '04',
-    title: 'Crescimento que se mantém',
-    text: 'O resultado é uma operação comercial previsível: mais clientes qualificados, mais oportunidades, e um negócio que cresce de forma consistente.',
+    title: 'Crescimento previsível.',
+    text: 'Mais clientes, mais oportunidades e uma estratégia preparada para crescer junto com o seu negócio.',
     accent: 'rgba(33,139,82,0.55)',
     bg: 'rgba(33,139,82,0.03)',
     border: 'rgba(33,139,82,0.18)',
