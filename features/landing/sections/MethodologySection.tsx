@@ -160,7 +160,7 @@ export function MethodologySection() {
         {/* CTA — próximo passo natural */}
         <div className="reveal flex flex-col items-center gap-3 text-center">
           <p className="text-[0.9375rem]" style={{ color: '#64748b' }}>
-            Você cuida do negócio. Nós cuidamos para que as pessoas certas encontrem você.
+            Você cuida do negócio. Nós cuidamos do seu crescimento.
           </p>
           <Link
             href="#contato"
