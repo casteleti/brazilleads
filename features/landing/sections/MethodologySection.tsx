@@ -69,7 +69,7 @@ export function MethodologySection() {
         {/* Header */}
         <div className="reveal mx-auto mb-14 text-center" style={{ maxWidth: '680px' }}>
           <p className="mb-5 text-[0.8125rem] font-medium" style={{ color: '#218B52' }}>
-            Nosso método
+            Como fazemos isso.
           </p>
 
           <h2
@@ -85,8 +85,9 @@ export function MethodologySection() {
           </h2>
 
           <p className="text-[1.0625rem] leading-[1.65]" style={{ color: '#475569' }}>
-            Antes do primeiro anúncio, entendemos o seu mercado. É assim que construímos estratégias
-            que conectam os clientes certos ao seu negócio — e se mantêm ao longo do tempo.
+            Antes de qualquer campanha, entendemos o seu mercado e como seus clientes tomam
+            decisões. Só então criamos uma estratégia para atrair as pessoas certas e gerar
+            crescimento consistente.
           </p>
         </div>
 
