@@ -50,7 +50,7 @@ export function WhySection() {
               className="reveal mb-8 text-[0.8125rem] font-semibold tracking-[0.08em] uppercase"
               style={{ color: '#218B52' }}
             >
-              A diferença
+              Muito além dos anúncios.
             </p>
 
             <h2
@@ -61,10 +61,8 @@ export function WhySection() {
                 color: '#0F2747',
               }}
             >
-              Qualquer agência conhece as plataformas.{' '}
-              <em style={{ color: '#218B52', fontStyle: 'italic' }}>
-                Poucas conhecem as pessoas que estão por trás delas.
-              </em>
+              Toda estratégia começa{' '}
+              <em style={{ color: '#218B52', fontStyle: 'italic' }}>entendendo pessoas.</em>
             </h2>
 
             {/* Brand statement — conclusão visual da seção */}
@@ -88,13 +86,11 @@ export function WhySection() {
                   fontStyle: 'normal',
                 }}
               >
-                Antes de pensar em anúncios,
-                <br />
-                pensamos nas pessoas.
+                Toda compra começa com uma decisão.
               </p>
 
               <p className="mt-3 text-[0.875rem] leading-[1.65]" style={{ color: '#94a3b8' }}>
-                — Princípio fundador da Brazilleads
+                É por isso que entendemos pessoas antes de construir estratégias.
               </p>
             </div>
           </div>
