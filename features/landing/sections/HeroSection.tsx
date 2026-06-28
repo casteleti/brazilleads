@@ -67,9 +67,9 @@ export function HeroSection() {
               Você saiu do Brasil
               <br className="hidden sm:block" />e construiu um negócio.{' '}
               <em style={{ color: '#218B52', fontStyle: 'italic' }}>
-                Agora é hora
+                Agora transforme visibilidade
                 <br className="hidden lg:block" />
-                de ser encontrado.
+                em novos clientes.
               </em>
             </h1>
 
@@ -78,9 +78,9 @@ export function HeroSection() {
               className="hero-fade-3 mb-7 space-y-1.5 text-[1.0625rem] leading-[1.6]"
               style={{ color: '#475569', maxWidth: '420px' }}
             >
-              <p>Todo dia, brasileiros na sua cidade procuram o que você oferece.</p>
+              <p>Seu próximo cliente já está procurando.</p>
               <p className="font-medium" style={{ color: '#0F2747' }}>
-                Nós garantimos que eles encontrem você.
+                A BrazilLeads posiciona sua empresa para ser encontrada.
               </p>
             </div>
 
