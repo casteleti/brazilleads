@@ -61,7 +61,7 @@ export function FinalCTASection() {
           {/* CTA */}
           <div className="reveal mb-10">
             <Link
-              href="https://wa.me/+1000000000"
+              href="https://wa.me/5516997407304"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
