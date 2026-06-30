@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 import { track } from '@/lib/tracking'
 
 const GA_ID = 'G-DHQ8SXE0FW'
-const PIXEL_ID = '1408932024403985'
+const PIXEL_ID = '4181000138710626'
 const CLARITY_ID = 'xd9nzn45f3'
 
 /** Scroll milestones to track (percent of page height). */
