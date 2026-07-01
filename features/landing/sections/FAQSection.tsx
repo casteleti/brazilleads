@@ -12,7 +12,7 @@ import { Plus, Minus } from 'lucide-react'
 const faqs = [
   {
     q: 'Vocês atendem qualquer tipo de negócio?',
-    a: 'Atendemos empresas que desejam atrair clientes brasileiros no país onde atuam. Antes de iniciar qualquer projeto, avaliamos se existe potencial para gerar resultados consistentes.',
+    a: 'Atendemos brasileiros que empreendem no exterior e desejam crescer de forma consistente. Antes de iniciar qualquer projeto, avaliamos o mercado, o momento do negócio e se existe potencial real para gerar resultados.',
   },
   {
     q: 'Vocês atendem qualquer país?',
