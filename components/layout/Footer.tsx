@@ -11,7 +11,7 @@ const nav = [
 
 const social = [
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/5516997407304' },
-  { icon: Mail, label: 'E-mail', href: 'mailto:hello@brazilleads.com' },
+  { icon: Mail, label: 'E-mail', href: 'mailto:contato@brazilleads.com' },
   { icon: Globe, label: 'Instagram', href: '#' },
   { icon: ExternalLink, label: 'LinkedIn', href: '#' },
 ]

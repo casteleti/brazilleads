@@ -11,7 +11,7 @@ export const siteConfig = {
     instagram: 'https://instagram.com/brazilleads',
   },
   contact: {
-    email: 'hello@brazilleads.com',
+    email: 'contato@brazilleads.com',
   },
   countries: ['usa', 'canada', 'australia', 'portugal'] as const,
 } as const
