@@ -8,7 +8,8 @@ export const siteConfig = {
   links: {
     whatsapp: 'https://wa.me/5516997407304',
     linkedin: 'https://linkedin.com/company/brazilleads',
-    instagram: 'https://instagram.com/brazilleads',
+    instagram: 'https://www.instagram.com/brazilleads/',
+    facebook: 'http://facebook.com.br/brazilleads',
   },
   contact: {
     email: 'contato@brazilleads.com',

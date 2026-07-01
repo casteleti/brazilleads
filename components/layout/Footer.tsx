@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ExternalLink, Globe, Mail, MessageCircle } from 'lucide-react'
+import { ExternalLink, Instagram, Mail, MessageCircle } from 'lucide-react'
 
 const nav = [
   { label: 'Início', href: '#hero-section' },
@@ -12,8 +12,8 @@ const nav = [
 const social = [
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/5516997407304' },
   { icon: Mail, label: 'E-mail', href: 'mailto:contato@brazilleads.com' },
-  { icon: Globe, label: 'Instagram', href: '#' },
-  { icon: ExternalLink, label: 'LinkedIn', href: '#' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/brazilleads/' },
+  { icon: ExternalLink, label: 'Facebook', href: 'http://facebook.com.br/brazilleads' },
 ]
 
 export function Footer() {
